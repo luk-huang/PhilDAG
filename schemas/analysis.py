@@ -11,15 +11,14 @@ class Artifact(BaseModel):
     title: str
     year: str
 
-class Claim(BaseModel):
+class Statement(BaseModel):
     id: int
-    artifact: Artifact
-    desc: str
-    quotes: list[Quote] = []
-    citations: list[str] = []
+    artifact: list[Artifact]
+    statement: str
+    citations: list[Quote] = []
 
 class Argument(BaseModel):
     id: int
-    premise: list[Claim]
-    conclusion: Claim
+    premise: list[Statement]
+    conclusion: Statement
     desc: str

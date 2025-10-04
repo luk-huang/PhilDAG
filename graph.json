@@ -1,0 +1,1179 @@
+{
+  "1": {
+    "id": 1,
+    "statement": "Suffering and death from lack of food, shelter, and medical care are bad.",
+    "supports": []
+  },
+  "2": {
+    "id": 2,
+    "statement": "People are dying in East Bengal from lack of food, shelter, and medical care.",
+    "supports": []
+  },
+  "3": {
+    "id": 3,
+    "statement": "People are dying in East Bengal due to lack of food, shelter, and medical care.",
+    "supports": []
+  },
+  "4": {
+    "id": 4,
+    "statement": "Suffering and death caused by lack of food, shelter, or medical care are bad.",
+    "supports": []
+  },
+  "5": {
+    "id": 5,
+    "statement": "Human decisions and actions can prevent the suffering and death occurring in East Bengal.",
+    "supports": []
+  },
+  "6": {
+    "id": 6,
+    "statement": "In November 1971 people in East Bengal were dying from lack of food, shelter, and medical care.",
+    "supports": []
+  },
+  "7": {
+    "id": 7,
+    "statement": "The suffering and death occurring in East Bengal are bad.",
+    "supports": [
+      1,
+      3
+    ]
+  },
+  "8": {
+    "id": 8,
+    "statement": "Human decisions and actions can prevent suffering and death from lack of food, shelter, and medical care.",
+    "supports": []
+  },
+  "9": {
+    "id": 9,
+    "statement": "Richer nations have the capacity to provide enough assistance to reduce further suffering in East Bengal to very small proportions.",
+    "supports": []
+  },
+  "10": {
+    "id": 10,
+    "statement": "Suffering and death due to lack of food, shelter, and medical care are bad.",
+    "supports": []
+  },
+  "11": {
+    "id": 11,
+    "statement": "The deaths of people in East Bengal from lack of food, shelter, and medical care are bad.",
+    "supports": [
+      1,
+      2
+    ]
+  },
+  "12": {
+    "id": 12,
+    "statement": "People were dying in East Bengal from lack of food, shelter, and medical care in November 1971.",
+    "supports": []
+  },
+  "13": {
+    "id": 13,
+    "statement": "Neither individuals nor governments can claim to be unaware of what is happening in Bengal.",
+    "supports": []
+  },
+  "14": {
+    "id": 14,
+    "statement": "The suffering and death occurring in East Bengal are not inevitable.",
+    "supports": [
+      5
+    ]
+  },
+  "15": {
+    "id": 15,
+    "statement": "The suffering and death occurring in East Bengal are preventable.",
+    "supports": [
+      5
+    ]
+  },
+  "16": {
+    "id": 16,
+    "statement": "The estimated cost of keeping the refugees alive for one year is \u00a3464,000,000.",
+    "supports": []
+  },
+  "17": {
+    "id": 17,
+    "statement": "The deaths occurring in East Bengal from lack of food, shelter, and medical care are bad.",
+    "supports": [
+      1,
+      2
+    ]
+  },
+  "18": {
+    "id": 18,
+    "statement": "Most individuals have not given large sums to relief funds for the East Bengal refugees.",
+    "supports": []
+  },
+  "19": {
+    "id": 19,
+    "statement": "The total amount given to relief at that time was about \u00a365,000,000.",
+    "supports": []
+  },
+  "20": {
+    "id": 20,
+    "statement": "The total amount given from all sources to East Bengal relief now stands at about \u00a365,000,000.",
+    "supports": []
+  },
+  "21": {
+    "id": 21,
+    "statement": "Most of the refugees have been in the camps for more than six months.",
+    "supports": []
+  },
+  "22": {
+    "id": 22,
+    "statement": "The World Bank said India needs at least \u00a3300,000,000 in assistance before the end of the year.",
+    "supports": []
+  },
+  "23": {
+    "id": 23,
+    "statement": "By that date Britain had given \u00a314,750,000 in aid to Bengal.",
+    "supports": []
+  },
+  "24": {
+    "id": 24,
+    "statement": "The World Bank said India needed a minimum of \u00a3300,000,000 in assistance from other countries before the end of the year.",
+    "supports": []
+  },
+  "25": {
+    "id": 25,
+    "statement": "If we can prevent something bad from happening without sacrificing anything of comparable moral importance, we ought morally to prevent it.",
+    "supports": []
+  },
+  "26": {
+    "id": 26,
+    "statement": "Britain had given \u00a314,750,000 in aid to the East Bengal refugees.",
+    "supports": []
+  },
+  "27": {
+    "id": 27,
+    "statement": "Britain has given \u00a314,750,000 in aid for the East Bengal refugees.",
+    "supports": []
+  },
+  "28": {
+    "id": 28,
+    "statement": "Most of the refugees had been in the camps for more than six months.",
+    "supports": []
+  },
+  "29": {
+    "id": 29,
+    "statement": "The total amount given to East Bengal relief (about \u00a365,000,000) is far less than the estimated cost of keeping the refugees alive for one year (\u00a3464,000,000).",
+    "supports": [
+      20,
+      16
+    ]
+  },
+  "30": {
+    "id": 30,
+    "statement": "Britain has given \u00a314,750,000 to Bengal relief.",
+    "supports": []
+  },
+  "31": {
+    "id": 31,
+    "statement": "The total amount given (about \u00a365,000,000) is substantially less than the estimated \u00a3464,000,000 needed to keep the refugees alive for one year.",
+    "supports": [
+      20,
+      16
+    ]
+  },
+  "32": {
+    "id": 32,
+    "statement": "The total relief given (~\u00a365,000,000) is far less than the estimated cost of keeping the refugees alive for one year (\u00a3464,000,000).",
+    "supports": [
+      20,
+      16
+    ]
+  },
+  "33": {
+    "id": 33,
+    "statement": "Britain's aid of \u00a314,750,000 to the East Bengal refugees is far smaller than the estimated \u00a3464,000,000 needed to keep the refugees alive for one year.",
+    "supports": [
+      16,
+      26
+    ]
+  },
+  "34": {
+    "id": 34,
+    "statement": "The total assistance given so far (about \u00a365,000,000) is far less than the estimated \u00a3464,000,000 needed to keep the refugees alive for one year.",
+    "supports": [
+      20,
+      16
+    ]
+  },
+  "35": {
+    "id": 35,
+    "statement": "If we can prevent something bad from happening without sacrificing anything of comparable moral importance, we morally ought to do it.",
+    "supports": []
+  },
+  "36": {
+    "id": 36,
+    "statement": "As of November 1971, Britain had given \u00a314,750,000 in aid to Bengal.",
+    "supports": []
+  },
+  "37": {
+    "id": 37,
+    "statement": "Britain's aid to the East Bengal refugees (\u00a314,750,000) is far less than the estimated cost of keeping the refugees alive for one year (\u00a3464,000,000).",
+    "supports": [
+      26,
+      16
+    ]
+  },
+  "38": {
+    "id": 38,
+    "statement": "The total funds given (about \u00a365,000,000) are insufficient to keep the refugees alive for one year.",
+    "supports": [
+      29
+    ]
+  },
+  "39": {
+    "id": 39,
+    "statement": "No government has provided massive aid sufficient to enable the refugees to survive for more than a few days.",
+    "supports": []
+  },
+  "40": {
+    "id": 40,
+    "statement": "The total aid to East Bengal (about \u00a365,000,000) is far less than the World Bank's minimum estimate of \u00a3300,000,000 needed by India before the end of the year.",
+    "supports": [
+      20,
+      22
+    ]
+  },
+  "41": {
+    "id": 41,
+    "statement": "Britain's aid of \u00a314,750,000 is far smaller than the minimum \u00a3300,000,000 India needs before the end of the year.",
+    "supports": [
+      26,
+      22
+    ]
+  },
+  "42": {
+    "id": 42,
+    "statement": "At least nine million people in East Bengal were turned into destitute refugees.",
+    "supports": []
+  },
+  "43": {
+    "id": 43,
+    "statement": "We ought morally to prevent the suffering and death occurring in East Bengal when we can do so without sacrificing anything of comparable moral importance.",
+    "supports": [
+      1,
+      5
+    ]
+  },
+  "44": {
+    "id": 44,
+    "statement": "In November 1971, the suffering and death occurring in East Bengal were not inevitable.",
+    "supports": [
+      6,
+      14
+    ]
+  },
+  "45": {
+    "id": 45,
+    "statement": "People have not made the necessary decisions to prevent the suffering and death in East Bengal.",
+    "supports": [
+      5,
+      18,
+      20,
+      16
+    ]
+  },
+  "46": {
+    "id": 46,
+    "statement": "Human beings have not made the necessary decisions to prevent the suffering and death occurring in East Bengal.",
+    "supports": [
+      18,
+      31,
+      9
+    ]
+  },
+  "47": {
+    "id": 47,
+    "statement": "It seems obvious that assistance on the scale needed (about \u00a3300,000,000) will not be forthcoming.",
+    "supports": [
+      40,
+      39
+    ]
+  },
+  "48": {
+    "id": 48,
+    "statement": "The total amount given to East Bengal relief (about \u00a365,000,000) is less than the World Bank's minimum required assistance (\u00a3300,000,000).",
+    "supports": [
+      20,
+      24
+    ]
+  },
+  "49": {
+    "id": 49,
+    "statement": "Expert observers and supervisors can direct aid to a refugee in Bengal almost as effectively as they could direct aid to someone in their own neighborhood.",
+    "supports": []
+  },
+  "50": {
+    "id": 50,
+    "statement": "Constant poverty, a cyclone, and a civil war turned at least nine million people into destitute refugees.",
+    "supports": []
+  },
+  "51": {
+    "id": 51,
+    "statement": "People in affluent (richer) countries ought morally to give money to prevent the suffering and death occurring in East Bengal.",
+    "supports": [
+      1,
+      6,
+      9,
+      15,
+      25
+    ]
+  },
+  "52": {
+    "id": 52,
+    "statement": "Britain's share of the nonrecoverable development costs of the Anglo-French Concorde project already exceeds \u00a3275,000,000 and is estimated to reach \u00a3440,000,000.",
+    "supports": []
+  },
+  "53": {
+    "id": 53,
+    "statement": "Proximity (physical distance) does not lessen our moral obligation to prevent something bad from happening.",
+    "supports": [
+      25
+    ]
+  },
+  "54": {
+    "id": 54,
+    "statement": "Human beings have not made the necessary decisions and taken the necessary actions to prevent the suffering and death occurring in East Bengal.",
+    "supports": [
+      5,
+      18,
+      39
+    ]
+  },
+  "55": {
+    "id": 55,
+    "statement": "Britain's share of the nonrecoverable development costs of the Anglo-French Concorde project exceeds \u00a3275,000,000.",
+    "supports": []
+  },
+  "56": {
+    "id": 56,
+    "statement": "In many parts of the world, people die from malnutrition and lack of food independent of any special emergency.",
+    "supports": []
+  },
+  "57": {
+    "id": 57,
+    "statement": "The Bengal emergency is one of a series of major emergencies occurring in various parts of the world.",
+    "supports": []
+  },
+  "58": {
+    "id": 58,
+    "statement": "Instant communication and swift transportation make it possible to direct aid to a refugee in Bengal almost as effectively as to someone in our own neighborhood.",
+    "supports": []
+  },
+  "59": {
+    "id": 59,
+    "statement": "Britain's share of the nonrecoverable development costs of the Anglo-French Concorde project exceeded \u00a3275,000,000 and was expected to reach \u00a3440,000,000.",
+    "supports": []
+  },
+  "60": {
+    "id": 60,
+    "statement": "The facts about the existence of suffering are beyond dispute.",
+    "supports": []
+  },
+  "61": {
+    "id": 61,
+    "statement": "The British government values a supersonic transport more than thirty times as highly as the lives of the nine million refugees.",
+    "supports": [
+      26,
+      52,
+      42
+    ]
+  },
+  "62": {
+    "id": 62,
+    "statement": "Britain's Concorde development costs far exceed the aid it has given to the East Bengal refugees.",
+    "supports": [
+      26,
+      52
+    ]
+  },
+  "63": {
+    "id": 63,
+    "statement": "Britain's spending on the Concorde project is much larger than its aid to the East Bengal refugees.",
+    "supports": [
+      52
+    ]
+  },
+  "64": {
+    "id": 64,
+    "statement": "Richer nations morally ought to provide enough assistance to reduce the suffering and death in East Bengal to very small proportions.",
+    "supports": [
+      9,
+      35,
+      7
+    ]
+  },
+  "65": {
+    "id": 65,
+    "statement": "Giving money to the Bengal Relief Fund is regarded as an act of charity in our society.",
+    "supports": []
+  },
+  "66": {
+    "id": 66,
+    "statement": "The suffering and death in East Bengal continue because richer nations have the capacity to prevent them but have not made the necessary decisions to provide sufficient assistance.",
+    "supports": [
+      9,
+      45,
+      2
+    ]
+  },
+  "67": {
+    "id": 67,
+    "statement": "Britain's share of the Concorde project's nonrecoverable development costs exceeds the amount Britain gave in aid to the East Bengal refugees.",
+    "supports": [
+      26,
+      55
+    ]
+  },
+  "68": {
+    "id": 68,
+    "statement": "The total funds given (about \u00a365,000,000) are far less than both the estimated \u00a3464,000,000 needed to keep the refugees alive for one year and the World Bank's minimum estimate of \u00a3300,000,000 needed by India before the end of the year.",
+    "supports": [
+      34,
+      40
+    ]
+  },
+  "69": {
+    "id": 69,
+    "statement": "Britain's Concorde development costs (estimated \u00a3275,000,000\u2013\u00a3440,000,000) are much larger than its aid to the East Bengal refugees (\u00a314,750,000).",
+    "supports": [
+      26,
+      52
+    ]
+  },
+  "70": {
+    "id": 70,
+    "statement": "In our society, giving money to the Bengal Relief Fund is regarded as an act of charity rather than a moral duty.",
+    "supports": []
+  },
+  "71": {
+    "id": 71,
+    "statement": "Without further substantial aid, people in East Bengal will continue to die from lack of food, shelter, and medical care.",
+    "supports": [
+      2,
+      38
+    ]
+  },
+  "72": {
+    "id": 72,
+    "statement": "The British government values a supersonic transport (Concorde) more than thirty times as highly as it values the lives of the nine million East Bengal refugees.",
+    "supports": [
+      27,
+      59,
+      42
+    ]
+  },
+  "73": {
+    "id": 73,
+    "statement": "Because instant communication and swift transportation enable aid to reach distant refugees almost as effectively as local aid, distance is not a moral justification for failing to help distant sufferers.",
+    "supports": [
+      58,
+      53
+    ]
+  },
+  "74": {
+    "id": 74,
+    "statement": "People in our society generally do not feel ashamed or guilty about spending money on luxuries (such as new clothes or a new car) instead of donating to famine relief.",
+    "supports": [
+      65,
+      70
+    ]
+  },
+  "75": {
+    "id": 75,
+    "statement": "Donating money to relief funds can prevent people in East Bengal from starving.",
+    "supports": [
+      5,
+      9,
+      49
+    ]
+  },
+  "76": {
+    "id": 76,
+    "statement": "The moral point of view requires us to look beyond the interests of our own society.",
+    "supports": [
+      1,
+      25,
+      53
+    ]
+  },
+  "77": {
+    "id": 77,
+    "statement": "The development of instant communication and swift transportation (the 'global village') has made an important difference to our moral situation.",
+    "supports": [
+      58,
+      53
+    ]
+  },
+  "78": {
+    "id": 78,
+    "statement": "Buying new clothes to look well dressed does not provide for any important need.",
+    "supports": []
+  },
+  "79": {
+    "id": 79,
+    "statement": "The traditional distinction between duty and charity cannot be justified in its usual application to giving to famine relief.",
+    "supports": [
+      43,
+      65
+    ]
+  },
+  "80": {
+    "id": 80,
+    "statement": "The way people in affluent countries respond to the Bengal crisis\u2014treating aid as charity and failing to provide sufficient assistance\u2014cannot be morally justified.",
+    "supports": [
+      51,
+      65,
+      18,
+      66
+    ]
+  },
+  "81": {
+    "id": 81,
+    "statement": "The traditional distinction between duty and charity, as normally drawn (treating giving to famine relief as charity rather than obligation), cannot be justified.",
+    "supports": [
+      65,
+      35,
+      43
+    ]
+  },
+  "82": {
+    "id": 82,
+    "statement": "Australia's aid to East Bengal was less than one-twelfth of the cost of Sydney's new opera house.",
+    "supports": []
+  },
+  "83": {
+    "id": 83,
+    "statement": "Some people argue that giving to private famine relief allows governments and noncontributing members of society to evade responsibility for providing aid.",
+    "supports": []
+  },
+  "84": {
+    "id": 84,
+    "statement": "At the individual level, people have, with very few exceptions, not responded to the Bengal crisis in any significant way.",
+    "supports": [
+      18,
+      45
+    ]
+  },
+  "85": {
+    "id": 85,
+    "statement": "Most people reserve moral condemnation for those who violate norms like theft, but do not condemn those who spend on luxuries instead of giving to famine relief.",
+    "supports": []
+  },
+  "86": {
+    "id": 86,
+    "statement": "Some argue that overseas aid should be a government responsibility, and therefore individuals should not give to privately run charities.",
+    "supports": []
+  },
+  "87": {
+    "id": 87,
+    "statement": "The traditional distinction between duty and charity cannot be maintained with respect to giving to famine relief.",
+    "supports": [
+      35,
+      75,
+      65
+    ]
+  },
+  "88": {
+    "id": 88,
+    "statement": "It is sometimes said that overseas aid should be a government responsibility.",
+    "supports": []
+  },
+  "89": {
+    "id": 89,
+    "statement": "The issue of famine concerns everyone who has more money than is needed to support themselves and their dependents.",
+    "supports": []
+  },
+  "90": {
+    "id": 90,
+    "statement": "The estimated cost of keeping the at least nine million East Bengal refugees alive for one year is \u00a3464,000,000.",
+    "supports": [
+      16,
+      42
+    ]
+  },
+  "91": {
+    "id": 91,
+    "statement": "Britain has given more aid to Bengal than most countries",
+    "supports": []
+  },
+  "92": {
+    "id": 92,
+    "statement": "We ought to give the money we would spend on nonessential new clothes to famine relief to prevent people from starving.",
+    "supports": [
+      25,
+      78,
+      75
+    ]
+  },
+  "93": {
+    "id": 93,
+    "statement": "If everyone in circumstances like mine gave \u00a35 to the Bengal Relief Fund, there would be enough to provide food, shelter, and medical care for the refugees.",
+    "supports": []
+  },
+  "94": {
+    "id": 94,
+    "statement": "We can do something about the suffering from famine, either through orthodox famine relief methods or through population control.",
+    "supports": []
+  },
+  "95": {
+    "id": 95,
+    "statement": "Whether others have already given, or can be expected to give, is a relevant circumstance in determining an individual's obligation to donate to famine relief.",
+    "supports": []
+  },
+  "96": {
+    "id": 96,
+    "statement": "The principle that we ought to prevent something bad from happening without sacrificing anything of comparable moral importance makes no moral distinction between being the only person who can help and being one among many in the same position.",
+    "supports": [
+      25
+    ]
+  },
+  "97": {
+    "id": 97,
+    "statement": "The moral principle that we ought to prevent something very bad when we can without sacrificing anything of comparable moral importance makes no moral distinction between cases where I am the only person who can help and cases where I am one among millions who could help.",
+    "supports": []
+  },
+  "98": {
+    "id": 98,
+    "statement": "People's actions and what they are likely to do are greatly influenced by the actions and expectations of those around them.",
+    "supports": []
+  },
+  "99": {
+    "id": 99,
+    "statement": "Discussion alone is not enough; we must act on the moral conclusions about preventing starvation.",
+    "supports": []
+  },
+  "100": {
+    "id": 100,
+    "statement": "The author wrote this paper in November 1971.",
+    "supports": []
+  },
+  "101": {
+    "id": 101,
+    "statement": "Britain's \u00a314,750,000 in aid to the East Bengal refugees is part of the total amount (~\u00a365,000,000) given to relief.",
+    "supports": [
+      26,
+      19
+    ]
+  },
+  "102": {
+    "id": 102,
+    "statement": "Philosophers are competent to take a position on famine.",
+    "supports": [
+      60,
+      75
+    ]
+  },
+  "103": {
+    "id": 103,
+    "statement": "Philosophers are competent to take a position on the issue of famine.",
+    "supports": []
+  },
+  "104": {
+    "id": 104,
+    "statement": "The presence of many others in the same position does not lessen an individual's obligation to prevent something very bad from happening.",
+    "supports": []
+  },
+  "105": {
+    "id": 105,
+    "statement": "The Bengal crisis has received adequate publicity.",
+    "supports": []
+  },
+  "106": {
+    "id": 106,
+    "statement": "Our moral conceptual scheme needs to be altered.",
+    "supports": [
+      80,
+      79
+    ]
+  },
+  "107": {
+    "id": 107,
+    "statement": "The author does not claim to be morally neutral in arguing his position.",
+    "supports": []
+  },
+  "108": {
+    "id": 108,
+    "statement": "People have not written to their parliamentary representatives demanding increased government assistance for East Bengal.",
+    "supports": []
+  },
+  "109": {
+    "id": 109,
+    "statement": "If I see a child drowning in a shallow pond, I ought to wade in and pull the child out even if it will muddy my clothes.",
+    "supports": []
+  },
+  "110": {
+    "id": 110,
+    "statement": "The author chose Bengal as his example because its size ensured it had received adequate publicity.",
+    "supports": []
+  },
+  "111": {
+    "id": 111,
+    "statement": "Most people are self-interested to some degree.",
+    "supports": []
+  },
+  "112": {
+    "id": 112,
+    "statement": "The onus is on people who refuse to give to privately organized famine relief to show that their refusal will bring about massive government assistance.",
+    "supports": []
+  },
+  "113": {
+    "id": 113,
+    "statement": "Some writers (including Sidgwick and Urmson) argue that a basic moral code should not demand more than ordinary people can reasonably be expected to do, because if it did there would be widespread noncompliance.",
+    "supports": []
+  },
+  "114": {
+    "id": 114,
+    "statement": "We ought to be campaigning actively for entirely new standards for both public and private contributions to famine relief.",
+    "supports": [
+      43,
+      66
+    ]
+  },
+  "115": {
+    "id": 115,
+    "statement": "Given present conditions in many parts of the world, we morally ought to be working full time to relieve great suffering from famine and similar disasters.",
+    "supports": [
+      35,
+      56,
+      94
+    ]
+  },
+  "116": {
+    "id": 116,
+    "statement": "From the moral point of view, preventing the starvation of millions of people outside our society is at least as pressing as upholding property norms within our society.",
+    "supports": [
+      1,
+      76
+    ]
+  },
+  "117": {
+    "id": 117,
+    "statement": "From the moral point of view, preventing the starvation of millions outside our society is at least as important as upholding property norms within our society.",
+    "supports": [
+      76,
+      25
+    ]
+  },
+  "118": {
+    "id": 118,
+    "statement": "The author takes Bengal as his example because it is the present concern and has been given adequate publicity.",
+    "supports": [
+      100,
+      6,
+      105
+    ]
+  },
+  "119": {
+    "id": 119,
+    "statement": "Singer uses the Bengal emergency as his example because it was the present concern and its large scale ensured it received adequate publicity.",
+    "supports": []
+  },
+  "120": {
+    "id": 120,
+    "statement": "India will be forced to choose between letting the refugees starve or diverting funds from her own development program, which will cause more of her own people to starve in the future.",
+    "supports": [
+      24,
+      47
+    ]
+  },
+  "121": {
+    "id": 121,
+    "statement": "The author agrees that governments of affluent nations should be giving many times the amount of genuine, no-strings-attached aid that they are giving now.",
+    "supports": []
+  },
+  "122": {
+    "id": 122,
+    "statement": "Governments of affluent nations should be giving many times the amount of aid they are currently giving.",
+    "supports": [
+      64,
+      40
+    ]
+  },
+  "123": {
+    "id": 123,
+    "statement": "Private charitable giving alone is insufficient to address the famine relief needs in Bengal.",
+    "supports": []
+  },
+  "124": {
+    "id": 124,
+    "statement": "If the principle that we ought to prevent something bad when we can without sacrificing anything of comparable moral importance were acted upon, our lives, our society, and our world would be fundamentally changed.",
+    "supports": [
+      25,
+      106
+    ]
+  },
+  "125": {
+    "id": 125,
+    "statement": "The author doubts that preaching what one does not practice (campaigning without personally giving) would be very effective.",
+    "supports": []
+  },
+  "126": {
+    "id": 126,
+    "statement": "Singer wrote this paper in November 1971.",
+    "supports": [
+      100,
+      119
+    ]
+  },
+  "127": {
+    "id": 127,
+    "statement": "India will be forced to choose between letting the refugees starve or diverting funds from its own development program, which will cause more of its own people to starve in the future.",
+    "supports": [
+      47,
+      42,
+      38,
+      22
+    ]
+  },
+  "128": {
+    "id": 128,
+    "statement": "Not everyone in circumstances like mine will give \u00a35 to the Bengal Relief Fund.",
+    "supports": [
+      84
+    ]
+  },
+  "129": {
+    "id": 129,
+    "statement": "The earth cannot support indefinitely a population rising at the present rate.",
+    "supports": []
+  },
+  "130": {
+    "id": 130,
+    "statement": "Neither physical distance nor the presence of many others in the same position reduces our moral obligation to prevent something very bad from happening when we can do so without sacrificing anything morally significant.",
+    "supports": [
+      53,
+      104,
+      25
+    ]
+  },
+  "131": {
+    "id": 131,
+    "statement": "The Bengal emergency is not unique except in its magnitude.",
+    "supports": [
+      57,
+      118
+    ]
+  },
+  "132": {
+    "id": 132,
+    "statement": "The author sympathizes with the view that campaigning for higher standards of public and private contributions to famine relief can be more important than giving personally.",
+    "supports": []
+  },
+  "133": {
+    "id": 133,
+    "statement": "If we save the Bengal refugees now, their children may face starvation in a few years' time.",
+    "supports": []
+  },
+  "134": {
+    "id": 134,
+    "statement": "The author assumes (and will not argue) that suffering and death from lack of food, shelter, and medical care are bad, and says those who disagree need read no further.",
+    "supports": []
+  },
+  "135": {
+    "id": 135,
+    "statement": "Because giving to the Bengal Relief Fund is regarded as charity rather than a duty, people who do not give are not morally condemned.",
+    "supports": [
+      70,
+      85
+    ]
+  },
+  "136": {
+    "id": 136,
+    "statement": "Thomas Aquinas wrote that whatever a person has in superabundance is owed, by natural right, to the poor for their sustenance.",
+    "supports": []
+  },
+  "137": {
+    "id": 137,
+    "statement": "The charitable person may be praised, but a person who is not charitable is not condemned.",
+    "supports": [
+      65,
+      74
+    ]
+  },
+  "138": {
+    "id": 138,
+    "statement": "Accepting that relieving famine now may only postpone starvation due to population growth does not absolve us from the obligation to prevent famine now.",
+    "supports": [
+      94,
+      115
+    ]
+  },
+  "139": {
+    "id": 139,
+    "statement": "If everyone gave as much as they morally ought to give, there might be more aid than can be used and some of the sacrifice would have been unnecessary.",
+    "supports": []
+  },
+  "140": {
+    "id": 140,
+    "statement": "The strong version of the principle would require us to give until we reach the level of marginal utility (reducing ourselves to the material circumstances of those we help).",
+    "supports": []
+  },
+  "141": {
+    "id": 141,
+    "statement": "After the author wrote this paper, India went to war to enable the refugees to return to their lands.",
+    "supports": []
+  },
+  "142": {
+    "id": 142,
+    "statement": "Some people hold eccentric views that death by starvation is not, in itself, bad.",
+    "supports": []
+  },
+  "143": {
+    "id": 143,
+    "statement": "Because not everyone in circumstances like mine will give \u00a35 to the Bengal Relief Fund, by giving more than \u00a35 I will prevent more suffering than I would if I gave just \u00a35.",
+    "supports": [
+      93,
+      128
+    ]
+  },
+  "144": {
+    "id": 144,
+    "statement": "Charitable people are praised, but those who are not charitable are not condemned.",
+    "supports": [
+      65,
+      85
+    ]
+  },
+  "145": {
+    "id": 145,
+    "statement": "When contributions are not simultaneous, those who give later will know how much more is needed and therefore are not obliged to give more than is necessary to reach the required amount.",
+    "supports": [
+      95
+    ]
+  },
+  "146": {
+    "id": 146,
+    "statement": "The consumer society has had a distorting effect on the goals and purposes of its members.",
+    "supports": []
+  },
+  "147": {
+    "id": 147,
+    "statement": "Many people use the claim \"it's the government's responsibility\" as a reason not to give to private famine relief, and this claim typically does not lead them to take political action.",
+    "supports": [
+      108
+    ]
+  },
+  "148": {
+    "id": 148,
+    "statement": "It is sometimes said that philosophers have no special role to play in public affairs because most public issues depend primarily on assessments of facts.",
+    "supports": []
+  },
+  "149": {
+    "id": 149,
+    "statement": "Population control is the best long-run means of preventing famine.",
+    "supports": [
+      94,
+      129,
+      133
+    ]
+  },
+  "150": {
+    "id": 150,
+    "statement": "Philosophers should discuss the issue of famine.",
+    "supports": [
+      102,
+      89
+    ]
+  },
+  "151": {
+    "id": 151,
+    "statement": "Physical proximity makes it more likely that we will assist someone.",
+    "supports": []
+  },
+  "152": {
+    "id": 152,
+    "statement": "Practically every teacher and student of philosophy in the universities of the Western world is included among those who should take a position on famine.",
+    "supports": []
+  },
+  "153": {
+    "id": 153,
+    "statement": "The author believes the strong version of the principle (that we ought to prevent bad things unless doing so requires sacrificing something of comparable moral importance) is correct.",
+    "supports": []
+  },
+  "154": {
+    "id": 154,
+    "statement": "The author endorses the strong version of the principle that we ought to prevent bad things unless doing so would require sacrificing something of comparable moral importance.",
+    "supports": []
+  },
+  "155": {
+    "id": 155,
+    "statement": "There are organizations working specifically for population control.",
+    "supports": []
+  },
+  "156": {
+    "id": 156,
+    "statement": "It is difficult, perhaps impossible, to refute the view that death by starvation is not, in itself, bad.",
+    "supports": []
+  },
+  "157": {
+    "id": 157,
+    "statement": "Western societies generally consider 1 percent of Gross National Product an acceptable level for overseas aid.",
+    "supports": []
+  },
+  "158": {
+    "id": 158,
+    "statement": "The author will argue for his moral position by making explicit assumptions so that those who accept those assumptions may accept his conclusion.",
+    "supports": []
+  },
+  "159": {
+    "id": 159,
+    "statement": "Physical proximity makes it more likely that we will assist someone, but this does not justify favoring those nearby over those far away.",
+    "supports": [
+      151,
+      53
+    ]
+  },
+  "160": {
+    "id": 160,
+    "statement": "The value and necessity of economic growth are being questioned by conservationists and economists.",
+    "supports": []
+  },
+  "161": {
+    "id": 161,
+    "statement": "There is no justification for discriminating on geographical grounds when deciding whom to help.",
+    "supports": [
+      58,
+      53
+    ]
+  },
+  "162": {
+    "id": 162,
+    "statement": "It may be possible to redraw the distinction between duty and charity in some other way.",
+    "supports": []
+  },
+  "163": {
+    "id": 163,
+    "statement": "The result of everyone doing what they really ought to do cannot be worse than the result of everyone doing less than they ought to do.",
+    "supports": [
+      139,
+      145
+    ]
+  },
+  "164": {
+    "id": 164,
+    "statement": "Because giving to the Bengal Relief Fund is regarded as charity rather than a duty, people do not feel ashamed or guilty about spending money on luxuries instead of donating to famine relief.",
+    "supports": [
+      65,
+      135,
+      74
+    ]
+  },
+  "165": {
+    "id": 165,
+    "statement": "Relief organizations thank donors for their generosity when they receive donations.",
+    "supports": []
+  },
+  "166": {
+    "id": 166,
+    "statement": "The principle that we ought to prevent something bad from happening when we can appears uncontroversial, but this apparent uncontroversialness is deceptive.",
+    "supports": [
+      25,
+      124
+    ]
+  },
+  "167": {
+    "id": 167,
+    "statement": "Relief organizations thank donors for their 'generosity' when they send a check.",
+    "supports": []
+  },
+  "168": {
+    "id": 168,
+    "statement": "The author uses the example of rescuing a child from a shallow pond to illustrate his moral principle.",
+    "supports": [
+      109
+    ]
+  },
+  "169": {
+    "id": 169,
+    "statement": "A philosopher who acts on these moral conclusions will have to sacrifice some benefits of the consumer society but can find satisfaction in bringing theory and practice closer together.",
+    "supports": [
+      99,
+      146
+    ]
+  },
+  "170": {
+    "id": 170,
+    "statement": "If we wear ourselves out through overwork, we will be less effective than we would otherwise have been.",
+    "supports": []
+  },
+  "171": {
+    "id": 171,
+    "statement": "By 'without sacrificing anything of comparable moral importance,' the author means without causing something else comparably bad to happen, doing something that is wrong in itself, or failing to promote some moral good comparable in significance to the bad thing prevented.",
+    "supports": []
+  },
+  "172": {
+    "id": 172,
+    "statement": "The essay is titled 'Famine, Affluence, and Morality'.",
+    "supports": []
+  },
+  "173": {
+    "id": 173,
+    "statement": "Organizations that collect money for relief are called \"charities.\"",
+    "supports": []
+  },
+  "174": {
+    "id": 174,
+    "statement": "If there are no bad occurrences that we can prevent without sacrificing anything of comparable moral importance, then the author's argument does not apply.",
+    "supports": [
+      25
+    ]
+  },
+  "175": {
+    "id": 175,
+    "statement": "Spending money on nonessential new clothes instead of donating that money to famine relief is morally wrong.",
+    "supports": [
+      35,
+      78
+    ]
+  },
+  "176": {
+    "id": 176,
+    "statement": "Physical distance does not reduce our moral obligation to prevent the suffering and death occurring in East Bengal.",
+    "supports": [
+      53,
+      7
+    ]
+  },
+  "177": {
+    "id": 177,
+    "statement": "The author cites John Kenneth Galbraith's The New Industrial State and E. J. Mishan's The Costs of Economic Growth.",
+    "supports": []
+  },
+  "178": {
+    "id": 178,
+    "statement": "The paradox that everyone doing as they morally ought might lead to unnecessary sacrifice arises only if contributions are made more or less simultaneously and unexpectedly.",
+    "supports": [
+      139,
+      145
+    ]
+  },
+  "179": {
+    "id": 179,
+    "statement": "The author thinks it is worth risking some breakdown of compliance in moral standards to promote much higher standards if the goal is to end widespread starvation.",
+    "supports": [
+      113,
+      114,
+      115
+    ]
+  },
+  "180": {
+    "id": 180,
+    "statement": "Giving money to the Bengal Relief Fund (famine relief) is morally required rather than merely supererogatory when it can prevent suffering and death without sacrificing anything of comparable moral importance.",
+    "supports": [
+      25,
+      65
+    ]
+  },
+  "181": {
+    "id": 181,
+    "statement": "One possible way to redraw the duty/charity distinction is to say it is good to make others as happy as possible, but not wrong not to do so.",
+    "supports": []
+  },
+  "182": {
+    "id": 182,
+    "statement": "The author says it is beyond the scope of his argument to consider whether the traditional distinction between duty and charity should be redrawn or abolished altogether.",
+    "supports": []
+  }
+}
