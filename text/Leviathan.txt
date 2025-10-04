@@ -1,0 +1,92 @@
+Leviathan
+or
+the Matter, Forme, & Power
+of a
+Common-wealth
+Ecclesiasticall
+and
+Civill.
+By Thomas Hobbes of Malmesbury
+London,
+printed for Andrew Crooke, at the Green Dragon
+in St. Pauls Church-yard
+1651
+Prepared for the McMaster University Archive of the History of
+Economic Thought, by Rod Hay.
+Contents
+Introduction........................................................................................ 7
+The First Part: Of Man ...................................................................... 9
+I: Of Sense ..................................................................................... 9II: Of Imagination ........................................................................ 10III: Of the Consequence or Train of Imaginations........................ 15IV: Of Speech............................................................................... 19V: Of Reason and Science............................................................ 26VI: Of the Interior Beginnings of Voluntary Notions, Commonly
+called the Passions; and the Speeches by which They are Ex-pressed....................................................................................... 31
+VII: Of the Ends or Resolutions of Discourse.............................. 40VIII: Of the Virtues Commonly called Intellectual; and their
+Contrary Defects ....................................................................... 42
+IX: Of the Several Subject of Knowledge.................................... 51X: Of Power, Worth, Dignity, Honour and Worthiness................ 53XI: Of the Difference of Manners................................................ 60XII: Of Religion........................................................................... 66XIII: Of the Natural Condition of Mankind as Concerning their
+Felicity and Misery.................................................................... 76
+XIV: Of the First and Second Natural Laws, and Of Contracts .. 79XV: Of Other Laws of Nature ..................................................... 88XVI: Of Persons, Authors, and Things Personated...................... 98
+The Second Part: Of Commonwealth............................................. 103
+XVII: Of the Causes, Generation, and Definition of a Common-
+wealth...................................................................................... 103
+XVIII: Of the Rights of Sovereigns by Institution ..................... 107
+4/Thomas Hobbes
+XIX: Of the Several Kinds of Commonwealth by Institution, and of
+Succession to the Sovereign Power ..........................................114
+XX: Of Dominion Paternal and Despotical................................ 122XXI: Of the Liberty of Subjects................................................. 129XXII: Of Systems Subject Political and Private ........................ 137XXIII: Of the Public Ministers of Sovereign Power.................. 147XXIV: Of the Nutrition and Procreation of a Commonwealth... 151XXV: Of Counsel....................................................................... 156XXVI: Of Civil Laws ................................................................ 162XXVII: Of Crimes, Excuses, and Extenuations......................... 178XXVIII: Of Punishments and Rewards...................................... 190XXIX: Of Those Things that Weaken or Tend to the Dissolution of
+a Commonwealth..................................................................... 197
+XXX: Of the Office of the Sovereign Representative ................ 205XXXI: Of the Kingdom of God by Nature ................................ 218
+The Third Part: Of a Christian Commonwealth............................. 228
+XXXII: Of the Principles of Christian Politics .......................... 228XXXIII: Of the Number, Antiquity, Scope, Authority, and Inter-
+preters of the Books of Holy Scripture.................................... 232
+XXXIV: Of the Signification of Spirit, Angel, and Inspiration in the
+Books of Holy Scripture.......................................................... 241
+XXXV: Of the Signification in Scripture of Kingdom of God, of
+Holy, Sacred, and Sacrament .................................................. 251
+XXXVI: Of the Word of God, and of Prophets.......................... 257XXXVII: Of Miracles and their Use.......................................... 269XXXVIII: Of the Signification in Scripture of Eternal Life, Hell,
+Salvation, the World to Come, and Redemption...................... 275
+XXXIX: Of the Signification in Scripture of the Word Church. 288XL: Of the Rights of the Kingdom of God, in Abraham, Moses, the
+High Priests, and the Kings of Judah....................................... 290
+XLI: Of the Office of our Blessed Saviour ................................ 299XLII: Of Power Ecclesiastical ................................................... 305XLIII: Of What is Necessary for a Man’s Reception into the
+Kingdom of Heaven................................................................. 365
+The Fourth Part: Of the Kingdom of Darkness.............................. 378
+XLIV: Of Spiritual Darkness From Misinterpretation of
+Scripture .............................................................................. 378
+XLV: Of Demonology and Other Relics of the Religion of the
+Gentiles.................................................................................... 399
+Leviathan/5
+XLVI: Of Darkness from Vain Philosophy and Fabulous
+Traditions............................................................................. 415
+XLVII: Of the Benefit that Proceedeth from such Darkness, and to
+Whom it Accrueth ................................................................... 430
+A Review and Conclusion.......................................................... 437
+
+Introduction
+Nature (the art whereby God hath made and governs the world) is by the art
+of man, as in many other things, so in this also imitated, that it can make anartificial animal. For seeing life is but a motion of limbs, the beginningwhereof is in some principal part within, why may we not say that allautomata (engines that move themselves by springs and wheels as doth awatch) have an artificial life? For what is the heart, but a spring; and thenerves, but so many strings; and the joints, but so many wheels, givingmotion to the whole body, such as was intended by the Artificer? Art goesyet further, imitating that rational and most excellent work of Nature, man.For by art is created that great Leviathan called a Commonwealth, or State(in Latin, Civitas), which is but an artificial man, though of greater stature
+and strength than the natural, for whose protection and defence it was in-tended; and in which the sovereignty is an artificial soul, as giving life andmotion to the whole body; the magistrates and other officers of judicatureand execution, artificial joints; reward and punishment (by which fastenedto the seat of the sovereignty, every joint and member is moved to performhis duty) are the nerves, that do the same in the body natural; the wealth andriches of all the particular members are the strength; salus populi  (the people’s
+safety) its business; counsellors, by whom all things needful for it to knoware suggested unto it, are the memory; equity and laws, an artificial reasonand will; concord, health; sedition, sickness; and civil war, death. Lastly,the pacts and covenants, by which the parts of this body politic were at firstmade, set together, and united, resemble that fiat, or the Let us make man,pronounced by God in the Creation.
+To describe the nature of this artificial man, I will considerFirst, the matter thereof, and the artificer; both which is man.Secondly, how, and by what covenants it is made; what are the rights
+8/Thomas Hobbes
+and just power or authority of a sovereign; and what it is that preserveth
+and dissolveth it.
+Thirdly, what is a Christian Commonwealth.Lastly, what is the Kingdom of Darkness.Concerning the first, there is a saying much usurped of late, that wis-
+dom is acquired, not by reading of books, but of men. Consequently where-unto, those persons, that for the most part can give no other proof of beingwise, take great delight to show what they think they have read in men, byuncharitable censures of one another behind their backs. But there is an-other saying not of late understood, by which they might learn truly to readone another, if they would take the pains; and that is, Nosce teipsum , Read
+thyself: which was not meant, as it is now used, to countenance either thebarbarous state of men in power towards their inferiors, or to encouragemen of low degree to a saucy behaviour towards their betters; but to teachus that for the similitude of the thoughts and passions of one man, to thethoughts and passions of another, whosoever looketh into himself andconsidereth what he doth when he does think, opine, reason, hope, fear, etc.,and upon what grounds; he shall thereby read and know what are the thoughtsand passions of all other men upon the like occasions. I say the similitude ofpassions, which are the same in all men,—desire, fear, hope, etc.; not thesimilitude of the objects of the passions, which are the things desired, feared,hoped, etc.: for these the constitution individual, and particular education,do so vary, and they are so easy to be kept from our knowledge, that thecharacters of man’s heart, blotted and confounded as they are with dissem-bling, lying, counterfeiting, and erroneous doctrines, are legible only to himthat searcheth hearts. And though by men’s actions we do discover theirdesign sometimes; yet to do it without comparing them with our own, anddistinguishing all circumstances by which the case may come to be altered,is to decipher without a key, and be for the most part deceived, by too muchtrust or by too much diffidence, as he that reads is himself a good or evilman.
+But let one man read another by his actions never so perfectly, it serves
+him only with his acquaintance, which are but few. He that is to govern awhole nation must read in himself, not this, or that particular man; butmankind: which though it be hard to do, harder than to learn any languageor science; yet, when I shall have set down my own reading orderly andperspicuously, the pains left another will be only to consider if he also findnot the same in himself. For this kind of doctrine admitteth no other dem-
+onstration.
+The First Part
+Of Man
+I: Of Sense
+Concerning the thoughts of man, I will consider them first singly, andafterwards in train or dependence upon one another. Singly, they areevery one a representation or appearance of some quality, or other acci-dent of a body without us, which is commonly called an object. Whichobject worketh on the eyes, ears, and other parts of man’s body, and bydiversity of working produceth diversity of appearances.
+The original of them all is that which we call sense, (for there is no
+conception in a man’s mind which hath not at first, totally or by parts,been begotten upon the organs of sense). The rest are derived from thatoriginal.
+To know the natural cause of sense is not very necessary to the
+business now in hand; and I have elsewhere written of the same at large.Nevertheless, to fill each part of my present method, I will briefly de-liver the same in this place.
+The cause of sense is the external body, or object, which presseth
+the organ proper to each sense, either immediately, as in the taste andtouch; or mediately, as in seeing, hearing, and smelling: which pressure,by the mediation of nerves and other strings and membranes of the body,continued inwards to the brain and heart, causeth there a resistance, orcounter-pressure, or endeavour of the heart to deliver itself: which en-deavour, because outward, seemeth to be some matter without. And thisseeming, or fancy, is that which men call sense; and consisteth, as to theeye, in a light, or colour figured; to the ear, in a sound; to the nostril, inan odour; to the tongue and palate, in a savour; and to the rest of thebody, in heat, cold, hardness, softness, and such other qualities as wediscern by feeling. All which qualities called sensible are in the objectthat causeth them but so many several motions of the matter, by which
+10/Thomas Hobbes
+it presseth our organs diversely. Neither in us that are pressed are they
+anything else but diverse motions (for motion produceth nothing butmotion). But their appearance to us is fancy, the same waking that dream-ing. And as pressing, rubbing, or striking the eye makes us fancy a light,and pressing the ear produceth a din; so do the bodies also we see, orhear, produce the same by their strong, though unobserved action. For ifthose colours and sounds were in the bodies or objects that cause them,they could not be severed from them, as by glasses and in echoes byreflection we see they are: where we know the thing we see is in oneplace; the appearance, in another. And though at some certain distancethe real and very object seem invested with the fancy it begets in us; yetstill the object is one thing, the image or fancy is another. So that sensein all cases is nothing else but original fancy caused (as I have said) bythe pressure that is, by the motion of external things upon our eyes,ears, and other organs, thereunto ordained.
+But the philosophy schools, through all the universities of
+Christendom, grounded upon certain texts of Aristotle, teach anotherdoctrine; and say, for the cause of vision, that the thing seen sendethforth on every side a visible species, (in English) a visible show, appari-tion, or aspect, or a being seen; the receiving whereof into the eye isseeing. And for the cause of hearing, that the thing heard sendeth forthan audible species, that is, an audible aspect, or audible being seen;which, entering at the ear, maketh hearing. Nay, for the cause of under-standing also, they say the thing understood sendeth forth an intelligiblespecies, that is, an intelligible being seen; which, coming into the under-standing, makes us understand. I say not this, as disapproving the use ofuniversities: but because I am to speak hereafter of their office in aCommonwealth, I must let you see on all occasions by the way whatthings would be amended in them; amongst which the frequency of in-significant speech is one.
+II: Of Imagination
+That when a thing lies still, unless somewhat else stir it, it will lie stillfor ever, is a truth that no man doubts of. But that when a thing is inmotion, it will eternally be in motion, unless somewhat else stay it, thoughthe reason be the same (namely, that nothing can change itself), is not soeasily assented to. For men measure, not only other men, but all otherthings, by themselves: and because they find themselves subject aftermotion to pain and lassitude, think everything else grows weary of mo-
