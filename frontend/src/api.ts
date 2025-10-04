@@ -1,4 +1,4 @@
-import type { GraphData } from './components/GraphView';
+import type { GraphData, AskPhilRequest, AskPhilResponse } from './types';
 
 const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
 
@@ -6,7 +6,7 @@ export async function analyzePdf(file: File): Promise<GraphData> {
   const formData = new FormData();
   formData.append('file', file);
 
-  const response = await fetch(`${API_BASE}/analyze`, {
+  const response = await fetch(`${API_BASE}/analyze/`, {
     method: 'POST',
     body: formData,
   });
@@ -15,6 +15,19 @@ export async function analyzePdf(file: File): Promise<GraphData> {
     throw new Error(await response.text());
   }
 
-  const payload = (await response.json()) as GraphData;
-  return payload;
+  return response.json() as Promise<GraphData>;
+}
+
+export async function askPhil(req: AskPhilRequest): Promise<AskPhilResponse> {
+  const response = await fetch(`${API_BASE}/ask/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(req),
+  });
+
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+
+  return response.json() as Promise<AskPhilResponse>;
 }

@@ -14,38 +14,7 @@ import {
   type SimulationLinkDatum,
   type SimulationNodeDatum,
 } from 'd3-force';
-
-type Quote = {
-  page: number;
-  text: string;
-};
-
-type Artifact = {
-  id: number;
-  name: string;
-  author: string;
-  tile: string;
-  year: string;
-};
-
-type Statement = {
-  id: number;
-  artifact: Artifact[];
-  statement: string;
-  citations?: Quote[];
-};
-
-type Argument = {
-  id: number;
-  premise: Statement[];
-  conclusion: Statement;
-  desc: string;
-};
-
-export type GraphData = {
-  statements?: Statement[];
-  arguments?: Argument[];
-};
+import type { GraphData, Statement, Argument, Quote } from '../types';
 
 type StatementRole = 'premise' | 'conclusion' | 'both' | 'isolated';
 type NodeRole = StatementRole | 'argument';
@@ -220,8 +189,8 @@ export function GraphView({ graph }: Props) {
 }
 
 function buildSimulationGraph(graph: GraphData): PreparedGraph {
-  const argumentsList = graph.arguments ?? [];
-  const explicitStatements = graph.statements ?? [];
+  const argumentsList = Array.isArray(graph.arguments) ? graph.arguments : [];
+  const explicitStatements = Array.isArray(graph.statements) ? graph.statements : [];
 
   const statementMap = new Map<number, Statement>();
   explicitStatements.forEach((statement) => {

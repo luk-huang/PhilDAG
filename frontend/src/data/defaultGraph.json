@@ -1,0 +1,108 @@
+{
+  "statements": [
+    {
+      "id": 1,
+      "artifact": [
+        {
+          "id": 1,
+          "name": "The Republic",
+          "author": "Plato",
+          "tile": "Allegory of the Cave",
+          "year": "ca. 380 BCE"
+        }
+      ],
+      "statement": "The prisoners only see shadows cast upon the cave wall, mistaking them for reality.",
+      "citations": [
+        { "page": 1, "text": "Behold! human beings living in an underground den..." }
+      ]
+    },  
+    {
+      "id": 2,
+      "artifact": [
+        {
+          "id": 1,
+          "name": "The Republic",
+          "author": "Plato",
+          "tile": "Allegory of the Cave",
+          "year": "ca. 380 BCE"
+        }
+      ],
+      "statement": "Leaving the cave is painful but reveals true forms under the sunlight.",
+      "citations": [
+        { "page": 3, "text": "At first he will see the shadows best..." }
+      ]
+    },
+    {
+      "id": 3,
+      "artifact": [
+        {
+          "id": 1,
+          "name": "The Republic",
+          "author": "Plato",
+          "tile": "Allegory of the Cave",
+          "year": "ca. 380 BCE"
+        }
+      ],
+      "statement": "Education is the turning of the soul toward the Form of the Good.",
+      "citations": [
+        { "page": 4, "text": "Education is not what some people boastfully assert it to be..." }
+      ]
+    }
+  ],
+  "arguments": [
+    {
+      "id": 1,
+      "desc": "Learning moves the soul from illusion to knowledge of the Good.",
+      "premise": [
+        {
+          "id": 1,
+          "artifact": [
+            {
+              "id": 1,
+              "name": "The Republic",
+              "author": "Plato",
+              "tile": "Allegory of the Cave",
+              "year": "ca. 380 BCE"
+            }
+          ],
+          "statement": "The prisoners only see shadows cast upon the cave wall, mistaking them for reality.",
+          "citations": [
+            { "page": 1, "text": "Behold! human beings living in an underground den..." }
+          ]
+        },
+        {
+          "id": 2,
+          "artifact": [
+            {
+              "id": 1,
+              "name": "The Republic",
+              "author": "Plato",
+              "tile": "Allegory of the Cave",
+              "year": "ca. 380 BCE"
+            }
+          ],
+          "statement": "Leaving the cave is painful but reveals true forms under the sunlight.",
+          "citations": [
+            { "page": 3, "text": "At first he will see the shadows best..." }
+          ]
+        }
+      ],
+      "conclusion": {
+        "id": 3,
+        "artifact": [
+          {
+            "id": 1,
+            "name": "The Republic",
+            "author": "Plato",
+            "tile": "Allegory of the Cave",
+            "year": "ca. 380 BCE"
+          }
+        ],
+        "statement": "Education is the turning of the soul toward the Form of the Good.",
+        "citations": [
+          { "page": 4, "text": "Education is not what some people boastfully assert it to be..." }
+        ]
+      }
+    }
+  ]
+}
