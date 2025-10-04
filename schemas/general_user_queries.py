@@ -358,7 +358,7 @@ def process_json(path: str) -> Tuple[List[Statement], List[Argument]]:
         a_obj.id = a["id"]
         a_obj.desc = a.get("desc", "")
         arguments.append(a_obj)
-    return statements, arguments
+    return GraphData(statements=statements, arguments=arguments)
 
 
 if __name__ == "__main__":
@@ -367,14 +367,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
     data = json.loads(Path(args.datafile).read_text())
 
-    statements, arguments = process_json(args.datafile)
+    graphdata = process_json(args.datafile)
 
     embedder = SentenceTransformerEmbeddings()  # or None
 
     llm = openai_llm_call_factory(model="gpt-4o-mini")
     hi_statements, hi_args, answer = query_graph(
         "I believe in helping my local community more than distant causes. What arguments and evidence support this?",
-        statements, arguments,
+        graphdata.statements,
+        graphdata.arguments, 
         llm_call=llm,
         embedder=embedder,
         prefilter=True,

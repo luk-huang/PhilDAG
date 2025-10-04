@@ -9,8 +9,11 @@ import argparse
 import json
 from pathlib import Path
 
+from dataclasses import dataclass
+from typing import Any, Dict, Optional, Callable
+
 # ---- Import your schema ----
-from analysis import Quote, Artifact, Statement, Argument
+from schema import Quote, Artifact, Statement, Argument, GraphData
 
 # =========================
 # Core graph construction
@@ -31,7 +34,10 @@ class Graph:
       - contradiction checks
       - nearest-statement retrieval (pluggable embeddings)
     """
-    def __init__(self, statements: List[Statement], arguments: List[Argument]):
+    def __init__(self, graphData: GraphData):
+        statements = graphData.statements
+        arguments = graphData.arguments
+
         self.statements: Dict[int, Statement] = {s.id: s for s in statements}
         self.arguments: List[Argument] = arguments
 
@@ -363,16 +369,10 @@ def query_support_from_usertext(g: Graph, text: str, p_nec: float = 0.5):
     if match.score < p_nec:
         return {"all_supporting_statements": [], "supporting_arguments": [], "minimal_axiom_sets": []}
     return query_supports(g, match.statement.id), match
-        
-
-if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser(description="Run example queries on a statements/arguments dataset.")
-    parser.add_argument("--datafile", type=str, required=True, help="Path to JSON file with statements and arguments.")
-    args = parser.parse_args()
 
 
-    data = json.loads(Path(args.datafile).read_text())
+def process_json(path: str) -> Tuple[List[Statement], List[Argument]]:
+    data = json.loads(Path(path).read_text())
     statements = []
     for s in data["statements"].values():
         s_obj = Statement(id=0, artifact=[], statement="", citations=[])
@@ -395,8 +395,17 @@ if __name__ == "__main__":
         a_obj.id = a["id"]
         a_obj.desc = a.get("desc", "")
         arguments.append(a_obj)
+    return GraphData(statements=statements, arguments=arguments)
 
-    g = Graph(statements, arguments)
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="Run example queries on a statements/arguments dataset.")
+    parser.add_argument("--datafile", type=str, required=True, help="Path to JSON file with statements and arguments.")
+    args = parser.parse_args()
+
+    graphdata = process_json(args.datafile)
+
+    g = Graph(graphdata)
 
     # 1) If I believe in statement X, what supports it?
     resp = query_supports(g, statement_id=10)

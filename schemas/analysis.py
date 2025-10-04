@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from 
+
 class Quote(BaseModel):
     page: int
     text: str
