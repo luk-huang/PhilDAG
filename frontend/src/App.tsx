@@ -32,8 +32,22 @@ function GraphPage({ graphData, setGraphData }: GraphPageProps) {
   const [loading, setLoading] = useState(false);
   const [assistantPrompt, setAssistantPrompt] = useState('');
   const [deepDAGEnabled, setDeepDAGEnabled] = useState(false);
-  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
   const navigate = useNavigate();
+
+  const pdfNames = useMemo(() => {
+    if (!graphData?.statements) {
+      return [];
+    }
+    const seen = new Set<string>();
+    graphData.statements.forEach((statement) => {
+      statement.artifact?.forEach((artifact) => {
+        if (artifact?.name) {
+          seen.add(artifact.name);
+        }
+      });
+    });
+    return Array.from(seen).sort((a, b) => a.localeCompare(b));
+  }, [graphData]);
 
   const handleUpload = async (file: File) => {
     setError(null);
@@ -41,7 +55,6 @@ function GraphPage({ graphData, setGraphData }: GraphPageProps) {
     try {
       const result = await analyzePdf(file);
       setGraphData(result);
-      setUploadedFiles((prev) => [...prev, file.name]);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Upload failed');
     } finally {
@@ -66,7 +79,6 @@ function GraphPage({ graphData, setGraphData }: GraphPageProps) {
 
   const handleResetGraph = () => {
     setGraphData(null);
-    setUploadedFiles([]);
   };
 
   return (
@@ -74,7 +86,7 @@ function GraphPage({ graphData, setGraphData }: GraphPageProps) {
       <main className="page">
         <h1>PhilDAG</h1>
 
-        <UploadForm onSubmit={handleUpload} loading={loading} files={uploadedFiles} />
+        <UploadForm onSubmit={handleUpload} loading={loading} files={pdfNames} />
 
         {error && <p className="error">{error}</p>}
 
