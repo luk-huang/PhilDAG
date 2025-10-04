@@ -32,6 +32,6 @@ class AskPhilResponse(BaseModel):
     subgraph: GraphData
 
 class AskPhilRequest(BaseModel):
-    answer: str
+    question: str
     deepdag: bool = False
     graph: GraphData
