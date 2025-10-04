@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from 
 class Quote(BaseModel):
     page: int
     text: str
@@ -22,3 +22,7 @@ class Argument(BaseModel):
     premise: list[Statement]
     conclusion: Statement
     desc: str
+
+class GraphData(BaseModel):
+    statements: list[Statement]
+    arguments: list[Argument]
