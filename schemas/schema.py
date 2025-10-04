@@ -1,5 +1,6 @@
 from typing import List, Optional
 from sqlmodel import SQLModel, Field, Relationship, Session, select, create_engine
+from pydantic import BaseModel
 
 class StatementArtifact(SQLModel, table=True):
     __tablename__ = "statement_artifact"
@@ -89,6 +90,9 @@ class Argument(SQLModel, table=True):
     conclusion_id: int = Field(foreign_key="statement.id", index=True)
     conclusion: Statement = Relationship(back_populates="conclusions_for")
 
+class GraphData(BaseModel):
+    statements: list[Statement]
+    arguments: list[Argument]
 
 def get_session(url='sqlite://database.db') -> Session:
     """Return a new SQLModel session bound to the global engine."""
