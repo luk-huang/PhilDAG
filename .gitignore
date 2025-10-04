@@ -1,5 +1,6 @@
 text/
 frontend/node_modules/
 frontend/dist/
+uploaded_files/
 __pycache__
 .env
