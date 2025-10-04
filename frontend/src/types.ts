@@ -38,11 +38,11 @@ export interface GraphData {
 
 export interface AskPhilRequest {
   question: string;
-  deepDAG?: boolean;
+  deepdag?: boolean;
+  graph?: GraphData;
 }
 
 export interface AskPhilResponse {
   answer: string;
-  statements: Statement[];
-  arguments: Argument[];
+  subgraph: GraphData;
 }

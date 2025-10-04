@@ -47,7 +47,8 @@ function GraphPage() {
     navigate('/assistant', {
       state: {
         question,
-        deepDAG: deepDAGEnabled,
+        deepdag: deepDAGEnabled,
+        graph: graphData ?? SAMPLE_ANALYSIS,
       },
     });
     setAssistantPrompt('');
@@ -71,7 +72,7 @@ function GraphPage() {
             id="assistant-query"
             className="assistant-drawer__input"
             type="text"
-            placeholder="Ask Phil about your work"
+            placeholder="Ask Phil"
             value={assistantPrompt}
             onChange={(event) => setAssistantPrompt(event.target.value)}
           />
@@ -98,7 +99,8 @@ function GraphPage() {
 
 type AssistantLocationState = {
   question: string;
-  deepDAG?: boolean;
+  deepdag?: boolean;
+  graph?: GraphData | null;
 };
 
 function AssistantPage() {
@@ -106,7 +108,8 @@ function AssistantPage() {
   const navigate = useNavigate();
   const state = location.state as AssistantLocationState | null;
   const question = state?.question ?? '';
-  const deepDAG = state?.deepDAG ?? false;
+  const deepdag = state?.deepdag ?? false;
+  const contextGraph = state?.graph ?? SAMPLE_ANALYSIS;
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -123,14 +126,11 @@ function AssistantPage() {
     setLoading(true);
     setError(null);
 
-    askPhil({ question, deepDAG })
+    askPhil({ question, deepdag, graph: contextGraph })
       .then((response: AskPhilResponse) => {
         if (!active) return;
         setAnswer(response.answer);
-        setGraph({
-          statements: response.statements,
-          arguments: response.arguments,
-        });
+        setGraph(response.subgraph);
       })
       .catch((err: unknown) => {
         if (!active) return;
@@ -145,7 +145,7 @@ function AssistantPage() {
     return () => {
       active = false;
     };
-  }, [question, deepDAG, navigate]);
+  }, [question, deepdag, navigate]);
 
   const heading = useMemo(() => (question ? `PhilDAG on: ${question}` : 'PhilDAG Assistant'), [question]);
 

@@ -9,9 +9,11 @@ from sentence_transformers import SentenceTransformer  # type: ignore
 import json
 from pathlib import Path
 import argparse
+from dotenv import load_dotenv
 
-# --- Your schema ---
-from analysis import Statement, Argument, Artifact, Quote
+load_dotenv()
+
+from schema import Statement, Argument, Artifact, Quote
 
 # =============== Utilities ===============
 
