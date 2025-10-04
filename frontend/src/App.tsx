@@ -1,53 +1,30 @@
-import { useState } from 'react';
-import { analyzePdf } from './api';
+import { useEffect, useMemo, useState } from 'react';
+import { Routes, Route, useLocation, useNavigate, Link } from 'react-router-dom';
+
+import { analyzePdf, askPhil } from './api';
 import { UploadForm } from './components/UploadForm';
-import { GraphView, type GraphData } from './components/GraphView';
+import { GraphView } from './components/GraphView';
+import defaultGraph from './data/defaultGraph.json';
+import type { GraphData, AskPhilResponse } from './types';
 
-const sampleArtifact = {
-  id: 1,
-  name: 'The Republic',
-  author: 'Plato',
-  tile: 'Allegory of the Cave',
-  year: 'ca. 380 BCE',
-};
-
-const samplePremise1 = {
-  id: 1,
-  artifact: [sampleArtifact],
-  statement: 'The prisoners only see shadows cast upon the cave wall, mistaking them for reality.',
-  citations: [{ page: 1, text: 'Behold! human beings living in an underground den...' }],
-};
-
-const samplePremise2 = {
-  id: 2,
-  artifact: [sampleArtifact],
-  statement: 'Leaving the cave is painful but reveals true forms under the sunlight.',
-  citations: [{ page: 3, text: 'At first he will see the shadows best...' }],
-};
-
-const sampleConclusion = {
-  id: 3,
-  artifact: [sampleArtifact],
-  statement: 'Education is the turning of the soul toward the Form of the Good.',
-  citations: [{ page: 4, text: 'Education is not what some people boastfully assert it to be...' }],
-};
-
-const SAMPLE_ANALYSIS: GraphData = {
-  statements: [samplePremise1, samplePremise2, sampleConclusion],
-  arguments: [
-    {
-      id: 1,
-      desc: 'Learning moves the soul from illusion to knowledge of the Good.',
-      premise: [samplePremise1, samplePremise2],
-      conclusion: sampleConclusion,
-    },
-  ],
-};
+const SAMPLE_ANALYSIS = defaultGraph as GraphData;
 
 export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<GraphPage />} />
+      <Route path="/assistant" element={<AssistantPage />} />
+    </Routes>
+  );
+}
+
+function GraphPage() {
   const [graphData, setGraphData] = useState<GraphData | null>(SAMPLE_ANALYSIS);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [assistantPrompt, setAssistantPrompt] = useState('');
+  const [deepDAGEnabled, setDeepDAGEnabled] = useState(false);
+  const navigate = useNavigate();
 
   const handleUpload = async (file: File) => {
     setError(null);
@@ -62,15 +39,126 @@ export default function App() {
     }
   };
 
+  const handleAssistantSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const question = assistantPrompt.trim();
+    if (!question) return;
+
+    navigate('/assistant', {
+      state: {
+        question,
+        deepDAG: deepDAGEnabled,
+      },
+    });
+    setAssistantPrompt('');
+  };
+
+  return (
+    <>
+      <main className="page">
+        <h1>PhilDAG</h1>
+
+        <UploadForm onSubmit={handleUpload} loading={loading} />
+
+        {error && <p className="error">{error}</p>}
+
+        <GraphView graph={graphData} />
+      </main>
+
+      <div className="assistant-drawer">
+        <form className="assistant-drawer__form" onSubmit={handleAssistantSubmit}>
+          <input
+            id="assistant-query"
+            className="assistant-drawer__input"
+            type="text"
+            placeholder="Ask Phil about your work"
+            value={assistantPrompt}
+            onChange={(event) => setAssistantPrompt(event.target.value)}
+          />
+          <button className="assistant-drawer__action" type="submit">
+            Send
+          </button>
+        </form>
+
+        <label className="assistant-drawer__toggle">
+          <span className="assistant-drawer__toggle-label">DeepDAG</span>
+          <input
+            type="checkbox"
+            checked={deepDAGEnabled}
+            onChange={(event) => setDeepDAGEnabled(event.target.checked)}
+          />
+          <span className="assistant-drawer__toggle-track">
+            <span className="assistant-drawer__toggle-thumb" />
+          </span>
+        </label>
+      </div>
+    </>
+  );
+}
+
+type AssistantLocationState = {
+  question: string;
+  deepDAG?: boolean;
+};
+
+function AssistantPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const state = location.state as AssistantLocationState | null;
+  const question = state?.question ?? '';
+  const deepDAG = state?.deepDAG ?? false;
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [answer, setAnswer] = useState<string | null>(null);
+  const [graph, setGraph] = useState<GraphData | null>(null);
+
+  useEffect(() => {
+    if (!question) {
+      navigate('/', { replace: true });
+      return;
+    }
+
+    let active = true;
+    setLoading(true);
+    setError(null);
+
+    askPhil({ question, deepDAG })
+      .then((response: AskPhilResponse) => {
+        if (!active) return;
+        setAnswer(response.answer);
+        setGraph({
+          statements: response.statements,
+          arguments: response.arguments,
+        });
+      })
+      .catch((err: unknown) => {
+        if (!active) return;
+        const message = err instanceof Error ? err.message : 'Unable to fetch explanation';
+        setError(message);
+      })
+      .finally(() => {
+        if (!active) return;
+        setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [question, deepDAG, navigate]);
+
+  const heading = useMemo(() => (question ? `PhilDAG on: ${question}` : 'PhilDAG Assistant'), [question]);
+
   return (
     <main className="page">
-      <h1>PhilDAG</h1>
+      <Link to="/" className="assistant-back">← Back to workspace</Link>
+      <h1>{heading}</h1>
 
-      <UploadForm onSubmit={handleUpload} loading={loading} />
-
+      {loading && <p className="assistant-status">Thinking…</p>}
       {error && <p className="error">{error}</p>}
+      {answer && <p className="assistant-answer">{answer}</p>}
 
-      <GraphView graph={graphData} />
+      <GraphView graph={graph} />
     </main>
   );
 }

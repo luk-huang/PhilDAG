@@ -2,7 +2,7 @@ from google import genai
 from google.genai import types
 from pathlib import Path
 from dotenv import load_dotenv
-from schemas.analysis import GraphData
+from schemas.schema import GraphData
 
 load_dotenv()
 
