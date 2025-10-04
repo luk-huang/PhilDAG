@@ -12,6 +12,6 @@ async def analyze_work(file: UploadFile):
     with open(path, "wb") as f:
         f.write(await file.read())
 
-    result = analyze(path)
+    result = await analyze(path)
 
     return result.model_dump()

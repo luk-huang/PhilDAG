@@ -1,47 +1,50 @@
-from google import genai
-from google.genai import types
+import os
 from pathlib import Path
+from typing import Optional
+
 from dotenv import load_dotenv
+
 from schemas.schema import GraphData
+from services.explainer import MultiDocumentPhilosophyDAG
 
 load_dotenv()
 
-def analyze(file_path: Path) -> GraphData:
-    client = genai.Client()
-    return extract_graph(file_path, client)
+_DAG_INSTANCE: Optional[MultiDocumentPhilosophyDAG] = None
 
-def extract_graph(file_path: Path, client: genai.Client) -> GraphData:
-    print(f"Analyzing {file_path}")
-    with open("services/prompts/extract_arguments.txt", "r", encoding="utf-8") as f:
-        prompt = f.read()
 
-    uploaded_file = client.files.upload(
-        file=file_path,
-    )
-    print(f"Finished Upload to Google Cloud {file_path}")
+def _get_dag() -> MultiDocumentPhilosophyDAG:
+    global _DAG_INSTANCE
+    if _DAG_INSTANCE is None:
+        sample_size = int(os.getenv("DAG_SAMPLE_SIZE", "5"))
+        _DAG_INSTANCE = MultiDocumentPhilosophyDAG(sample_size=sample_size)
+    return _DAG_INSTANCE
 
-    output = client.models.generate_content(
-        model = "gemini-2.5-flash", 
-        contents=[
-            uploaded_file,
-            prompt
-        ],
-        config = types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(
-                include_thoughts=False,
-                thinking_budget=-1
-            ),
-            response_schema=GraphData,
-            response_mime_type='application/json'
-        )
-    )
-    
-    test_analysis: GraphData = output.parsed
-    print("Done! Passing to frontend")
-    return test_analysis
 
-if __name__ == '__main__':
-    client = genai.Client()
-    test = "text/plato_republic_514b-518d_allegory-of-the-cave.pdf"
-    file_path = Path(test)
-    extract_graph(file_path, client)
+async def analyze(file_path: Path) -> GraphData:
+    dag = _get_dag()
+    dag.add_source(file_path)
+
+    focus_iterations = max(1, int(os.getenv("DAG_FOCUS_ITERATIONS", "3")))
+    await dag.process_files([file_path], iterations=focus_iterations)
+
+    background_iterations = int(os.getenv("DAG_BACKGROUND_ITERATIONS", "0"))
+    background_workers = int(os.getenv("DAG_BACKGROUND_WORKERS", "1"))
+    if background_iterations > 0:
+        await dag.advance(iterations=background_iterations, workers=background_workers)
+
+    print(f"Updated DAG with {file_path}")
+    return dag.to_graph_data()
+
+async def extract_graph(file_path: Path) -> GraphData:
+    return await analyze(file_path)
+
+
+if __name__ == "__main__":
+    import asyncio
+
+    test_path = Path("text/plato_republic_514b-518d_allegory-of-the-cave.pdf")
+    if not test_path.exists():
+        raise FileNotFoundError(test_path)
+
+    result = asyncio.run(analyze(test_path))
+    print(result.model_dump())
