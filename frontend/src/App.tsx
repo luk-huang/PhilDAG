@@ -6,6 +6,8 @@ import { UploadForm } from './components/UploadForm';
 import { GraphView } from './components/GraphView';
 import defaultGraph from './data/defaultGraph.json';
 import type { GraphData, ConversationTurn } from './types';
+import { TTSButton } from './components/TTSButton';
+import { useTTS } from './hooks/useTTS';
 
 const SAMPLE_ANALYSIS = defaultGraph as GraphData;
 
@@ -117,6 +119,8 @@ function AssistantPage() {
   const [conversation, setConversation] = useState<ConversationTurn[]>([]);
   const [messageDraft, setMessageDraft] = useState('');
   const lastQuestionRef = useRef<string | null>(null);
+  const { speak, isLoading: ttsLoading, error: ttsError } = useTTS();
+  const assistantSpokenCountRef = useRef<number>(0);
 
   const sendRequest = useCallback(
     async (prompt: string, history: ConversationTurn[]) => {
@@ -177,6 +181,26 @@ function AssistantPage() {
     return question ? `PhilDAG on: ${question}` : 'PhilDAG Assistant';
   }, [conversation, question]);
 
+  const lastAssistantText = useMemo(() => {
+    for (let i = conversation.length - 1; i >= 0; i -= 1) {
+      if (conversation[i].role === 'assistant') {
+        return conversation[i].content;
+      }
+    }
+    return '';
+  }, [conversation]);
+
+  useEffect(() => {
+    const assistantMessages = conversation.filter((m) => m.role === 'assistant');
+    if (assistantMessages.length > assistantSpokenCountRef.current) {
+      const latest = assistantMessages[assistantMessages.length - 1];
+      if (latest?.content?.trim()) {
+        void speak(latest.content);
+      }
+      assistantSpokenCountRef.current = assistantMessages.length;
+    }
+  }, [conversation, speak]);
+
   return (
     <main className="page">
       <Link to="/" className="assistant-back">← Back to workspace</Link>
@@ -186,6 +210,11 @@ function AssistantPage() {
         {conversation.map((message, index) => (
           <div key={`${message.role}-${index}`} className={`assistant-chat__message assistant-chat__message--${message.role}`}>
             <span>{message.content}</span>
+            {message.role === 'assistant' && (
+              <TTSButton text={message.content}>
+                🔊 Speak
+              </TTSButton>
+            )}
           </div>
         ))}
         {loading && <p className="assistant-status">Thinking…</p>}
@@ -205,7 +234,12 @@ function AssistantPage() {
         <button type="submit" disabled={loading}>
           Send
         </button>
+        <TTSButton text={lastAssistantText} disabled={ttsLoading || !lastAssistantText.trim()}>
+          🔊 Read Last
+        </TTSButton>
       </form>
+
+      {ttsError && <p className="error">{ttsError}</p>}
 
       <GraphView graph={graph} />
     </main>
