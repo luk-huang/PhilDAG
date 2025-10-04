@@ -8,7 +8,7 @@ class Artifact(BaseModel):
     id: int
     name: str
     author: str
-    tile: str
+    title: str
     year: str
 
 class Statement(BaseModel):
