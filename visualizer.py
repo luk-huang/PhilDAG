@@ -4,16 +4,17 @@ import json
 with open('graph.json', 'r') as f:
     graph_data = json.load(f)
 
-statements = graph_data.get('statements', {})
-arguments = graph_data.get('arguments', {})
+statements = graph_data.get('statements', [])
+arguments = graph_data.get('arguments', [])
 
 nodes = []
 edges = []
 
 # Add statement nodes (circles, blue/green based on whether they have supporting arguments)
-for stmt_id, stmt in statements.items():
+for stmt in statements:
+    stmt_id = stmt['id']
     # Check if this statement is a conclusion of any argument
-    is_conclusion = any(arg['conclusion'] == int(stmt_id) for arg in arguments.values())
+    is_conclusion = any(arg['conclusion'] == stmt_id for arg in arguments)
     
     color = '#90EE90' if is_conclusion else '#87CEEB'  # Green if supported, blue if axiom
     
@@ -28,7 +29,8 @@ for stmt_id, stmt in statements.items():
     })
 
 # Add argument nodes (squares, orange)
-for arg_id, arg in arguments.items():
+for arg in arguments:
+    arg_id = arg['id']
     nodes.append({
         'id': f'arg_{arg_id}',
         'label': f"Arg {arg_id}",
@@ -229,7 +231,7 @@ html_content = f"""
         <strong>Statistics:</strong>
         Total Statements: {len(statements)} | 
         Total Arguments: {len(arguments)} | 
-        Axioms: {sum(1 for sid in statements if not any(arg['conclusion'] == int(sid) for arg in arguments.values()))}
+        Axioms: {sum(1 for stmt in statements if not any(arg['conclusion'] == stmt['id'] for arg in arguments))}
     </div>
 </body>
 </html>
@@ -243,4 +245,4 @@ print(f"Created philosophy_dag.html - open it in your browser")
 print(f"\nGraph Statistics:")
 print(f"  - {len(statements)} statements")
 print(f"  - {len(arguments)} arguments") 
-print(f"  - {sum(1 for sid in statements if not any(arg['conclusion'] == int(sid) for arg in arguments.values()))} axioms (unsupported statements)")
+print(f"  - {sum(1 for stmt in statements if not any(arg['conclusion'] == stmt['id'] for arg in arguments))} axioms (unsupported statements)")

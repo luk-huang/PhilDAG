@@ -1,0 +1,377 @@
+EXTRACTED 160 STATEMENTS and 54 ARGUMENTS
+
+AXIOMS (statements with no supporting arguments):
+[1] People are dying in East Bengal from lack of food, shelter, and medical care.
+[2] Millions in East Bengal are suffering and dying from lack of food, shelter, and medical care, and this suffering is not inevitable because richer nations can provide enough assistance to greatly reduce it.
+[3] People are dying in East Bengal from lack of food, shelter, and medical care.
+[5] Most individuals in affluent countries have not responded significantly to the Bengal crisis (they have not given large sums, written representatives, demonstrated, or engaged in substantial political action).
+[6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+[7] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, then we ought morally to prevent it.
+[8] Suffering and death from lack of food, shelter, or medical care are bad.
+[9] Affluent nations have the capacity to provide enough assistance to greatly reduce suffering in emergencies like the Bengal famine.
+[10] Most individuals and governments have not taken significant action to prevent the suffering in Bengal.
+[12] Neither physical distance nor the fact that many others could help reduces an individual's moral obligation to prevent great suffering.
+[13] Suffering and death from lack of food, shelter, and medical care are bad.
+[14] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do it.
+[15] Many people in affluent countries have not taken significant action to help the refugees in East Bengal.
+[16] Richer nations have the capacity to provide enough assistance to greatly reduce the suffering of the refugees in East Bengal.
+[17] Physical distance or geographical remoteness does not lessen our moral obligation to help people who are suffering far away.
+[18] People in East Bengal are dying from lack of food, shelter, and medical care.
+[19] The suffering and deaths in East Bengal are not inevitable and could be prevented by decisions and actions of richer nations.
+[20] Individuals in affluent countries have, with very few exceptions, not significantly responded to the Bengal emergency (they have not donated substantial sums, lobbied their governments, or organized public protests).
+[21] If we can prevent something bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+[22] Neither geographic proximity nor the fact that many others could also help reduces an individual's moral obligation to prevent a very bad event when they can do so without comparable sacrifice.
+[23] People in East Bengal are dying from lack of food, shelter, and medical care.
+[24] These deaths are not inevitable and could largely be prevented if wealthier nations provided sufficient assistance.
+[25] Most individuals in affluent countries have not taken significant actions (e.g., donating substantial sums, lobbying governments, protesting) to help the refugees.
+[27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+[29] Individuals in affluent countries have generally not responded in any significant way to the Bengal emergency (they have not given large sums to relief funds, pressured their governments, or engaged in public protest).
+[30] If it is in our power to prevent something bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+[31] Neither physical proximity nor the fact that many others could also help reduces an individual's moral obligation to prevent a very bad occurrence that they can prevent without comparable sacrifice.
+[33] If we can prevent something bad from happening without sacrificing anything of comparable moral importance, we ought to do it.
+[34] Distance or geographical proximity does not reduce our moral obligation to prevent bad things happening to people far away.
+[35] The existence of many other people in the same position does not reduce any one person's obligation to prevent a very bad outcome.
+[37] If we can prevent something very bad from happening without sacrificing anything morally significant, we ought morally to prevent it.
+[38] Neither physical distance to victims nor the fact that many others are also able to help reduces an individual’s moral obligation to prevent suffering.
+[39] Most individuals in affluent countries have not given substantial sums to relief funds, written to representatives, demonstrated, fasted, or otherwise acted significantly to help the Bengal refugees.
+[40] When one has money not needed for essential needs, giving it to prevent someone from starving is a moral duty, not merely an act of charity or a supererogatory action.
+[44] Population control is the best long-term means of preventing recurrent famines, so we ought to support effective population-control measures and organizations as part of our moral response.
+[45] Suffering and death from lack of food, shelter, and medical care are bad.
+[46] Richer nations have the capacity to provide enough assistance to greatly reduce or prevent the suffering and deaths of the Bengal refugees.
+[47] If it is in our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, then we morally ought to prevent it.
+[49] The existence of many other people in the same position (numbers) does not lessen an individual's moral obligation to prevent severe suffering.
+[50] People in East Bengal are dying from lack of food, shelter, and medical care.
+[52] Most individuals in affluent countries have not made significant personal contributions or political efforts to relieve the Bengal refugees.
+[54] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+[55] The Bengal emergency is not unique; it is one of many major emergencies around the world and differs mainly in its scale.
+[56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+[57] Society treats giving to famine relief as an act of charity rather than a moral obligation, so people feel little shame or guilt for choosing luxury spending over donating.
+[58] It is unlikely that refusing to give to private relief funds will cause governments to provide large-scale aid; if anything, lack of voluntary donations makes it more likely governments will assume citizens are uninterested and not increase aid.
+[59] Campaigning for increased government aid can be as important or more important than individual donations in securing relief for famine victims.
+[62] Neither individuals nor governments can plausibly claim to be unaware of the suffering in Bengal.
+[64] Philosophers and philosophy teachers have both the competence and the responsibility to discuss famine and affluence issues, and they should not only discuss these issues but also act on the conclusions they reach.
+[65] Instant communication and rapid transportation make it possible to direct aid to distant victims almost as effectively as to local victims.
+[67] Refusing to give privately on the grounds that the government should take responsibility is unjustified unless one can show a definite probability that such refusal will cause the government to act.
+[68] Philosophers are competent to take a position on famine relief because the factual questions (existence of suffering and the possibility of effective help) are clear.
+[69] Discussion alone is insufficient; those who accept the moral conclusion about famine relief ought to act on it rather than merely debate it.
+[71] Modern communication, transportation, and aid organizations allow expert observers and supervisors to direct relief to distant victims almost as effectively as to nearby victims.
+[72] Philosophers are competent to take a position on famine relief because the facts about the suffering and our capacity to help are not in serious dispute.
+[74] The strong version of the duty-to-prevent principle (prevent very bad things unless doing so requires sacrificing something of comparable moral importance) appears correct and would, if accepted, require individuals to give until the point of marginal utility.
+[75] If many others are expected to give, an individual's obligation may be reduced because those who give later, knowing others have already contributed, are in different circumstances from early donors.
+[78] Philosophers are competent to take a position on famine relief because the facts about the existence of suffering and our ability to help (via relief or population control) are sufficiently clear.
+[79] Discussion alone is insufficient; those who accept the moral conclusion about preventing famine ought to act on it rather than merely debate it.
+[80] Whether others have given or are expected to give is a relevant circumstance that affects an individual's obligation; those who give later, knowing many others have already given, are in different circumstances from those who gave earlier.
+[82] If the principle that we must prevent very bad things when we can do so without comparable sacrifice were widely acted upon, our lives, society, and the structure of the world would be fundamentally changed.
+[83] Giving away an excessively large share of national income could slow the economy so much that the absolute amount available for aid falls; therefore decisions about how much to give must take into account economic effects on total aid delivered.
+[84] Moral standards and expectations strongly influence what people do; changing those standards can increase compliance with more demanding moral requirements.
+[85] If we give away a very large share of our national income so that the economy slows substantially, the resulting smaller Gross National Product could reduce the total amount available for aid, so there is a practical limit to how much deliberately slowing the economy for overseas aid will increase absolute assistance.
+[86] Given current global conditions, we morally ought to be working full-time to relieve great suffering when doing so does not require sacrificing something of comparable moral importance.
+[87] Moral standards and social expectations influence what people do; raising expectations about giving and duty can increase compliance with moral obligations like famine relief.
+[89] The apparent paradox — that if everyone gave as much as they ought the outcome might be worse than if some gave less — only arises when contributions are made more or less simultaneously and contributors are mistaken about how much others will give.
+[90] The strong version of the moral principle requires giving up to the point of marginal utility: one should give until further donations would cause as much suffering to oneself or one's dependents as they would prevent.
+[91] When people give later rather than earlier, or when earlier givers know how much more is needed, their obligations change because the relevant circumstances differ (those giving later are not in the same circumstances as those who gave earlier).
+[94] Relieving famine now without effective population control risks merely postponing starvation to future generations.
+[96] What people around us do and expect strongly influences what individuals are likely to do and what is realistically possible for them to do.
+[97] Singer's pond-and-child example illustrates that a trivial personal cost (getting clothes muddy) does not excuse failing to prevent a very bad outcome (a child drowning).
+[98] Working oneself to exhaustion to relieve suffering can make one less effective at helping and is a legitimate mitigating circumstance when determining how much one ought to do.
+[99] Saying 'it's the government's responsibility' often serves as an excuse that results in neither private donations nor political action.
+[100] The apparent paradox (that everyone doing their moral duty could produce a worse result than if some did less) arises only when contributions are made more or less simultaneously and unexpectedly.
+[101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+[102] If the moral principle that we ought to prevent very bad things when we can without sacrificing anything of comparable moral importance were accepted and acted on, our lives, society, and the world would be fundamentally changed.
+[103] Given present global conditions (many large, preventable emergencies and widespread suffering), the moral principle implies we morally ought to be working full-time to relieve great suffering such as famine, unless doing so would make us significantly less effective.
+[104] Australia's aid to the Bengal refugees was less than one-twelfth of the cost of Sydney's new opera house.
+[105] The World Bank stated that India needed a minimum of £300,000,000 in assistance from other countries before the end of the year.
+[106] Many major global evils (for example, poverty, overpopulation, and pollution) are problems in which nearly everyone is similarly involved.
+[107] The consumer society distorts the goals and purposes of its members, making them less likely to prioritize giving to famine relief.
+[108] A philosopher who acts on the moral conclusions about famine will have to give up some consumer benefits but can gain satisfaction from bringing theory and practice into closer alignment.
+[109] Most of the refugees have been living in the camps for more than six months.
+[110] The World Bank reported that India needed at least £300,000,000 in assistance before the end of the year.
+[111] The consumer society has distorted the goals and purposes of its members.
+[112] Philosophers who act on these conclusions will have to give up some consumer benefits but can find compensation in the satisfaction of bringing their theory and practice closer together.
+[114] The consumer society distorts the goals and purposes of its members.
+[115] Working oneself to exhaustion to relieve suffering can reduce one's effectiveness, and so overwork is a legitimate mitigating consideration when deciding how much one ought to do.
+[116] Buying new clothes to look well-dressed is not necessary for meeting important needs; foregoing such purchases would not be a significant sacrifice.
+[117] Western societies generally consider 1% of Gross National Product an acceptable level for overseas aid.
+[118] Campaigning for increased government aid while not personally contributing (preaching without practicing) is unlikely to be effective.
+[120] Thomas Aquinas held that goods held in superabundance are owed, by natural right, to the poor (i.e., surplus material goods should be used for others' sustenance).
+[121] Some people argue that overseas aid should be the government's responsibility, so individuals need not give to private charities.
+[122] Campaigning for greater government aid is likely to be ineffective if one preaches it without practicing it oneself; 'preaching what one does not practice' undermines effectiveness.
+[123] Economists and conservationists are questioning the value and necessity of continuous economic growth.
+[124] Campaigning for increased government aid while refusing to give personally (preaching without practicing) is unlikely to be effective.
+[125] The value and necessity of economic growth are being questioned by conservationists and some economists.
+[126] The moral point of view requires us to care about and act to prevent suffering beyond the interests of our own society.
+[127] Preaching about famine relief while not practicing it oneself is unlikely to be effective.
+[128] Thomas Aquinas argued that whatever a person has in superabundance is, by natural right, owed to the poor for their sustenance.
+[129] If we accept principles of impartiality, universalizability, or equality, then we cannot favor helping people who are geographically nearer over those who are farther away.
+[130] If we are genuinely in a better position to judge what help is needed for someone nearby and to provide that help more effectively than for someone far away, that can be a reason to prioritize helping the nearby person.
+[132] Some philosophers (for example Sidgwick and Urmson) argue that moral codes must not demand more than ordinary people can reasonably do, because overly demanding moral rules will reduce compliance and risk a breakdown of moral behavior.
+[133] Some writers (for example Sidgwick and Urmson) argue that moral requirements must be kept within the ordinary person's capacities because overly demanding moral rules will lead to widespread noncompliance.
+[134] Giving until the point of marginal utility would reduce a donor to living nearly the same material conditions as a Bengali refugee.
+[135] After the paper was written, India went to war to enable the refugees to return to their lands.
+[136] That most people are self-interested and will not do everything they ought to do does not show that we are not morally obliged to do what we ought.
+[137] Many people around the world die from malnutrition even outside of acute emergencies.
+[138] There is a psychological difference in feeling less guilt when others also do nothing, but that psychological difference does not reduce our moral obligation to help.
+[139] Singer accepts that the earth cannot support a population that continues to rise at the present rate indefinitely.
+[140] Britain has given £14,750,000 to relief for the East Bengal refugees.
+[141] Britain's share of the nonrecoverable Anglo‑French Concorde development costs already exceeds £275,000,000 and is projected to reach about £440,000,000.
+[143] Britain has given £14,750,000 in aid to the Bengal refugees.
+[144] Singer explicitly assumes that suffering and death from lack of food, shelter, and medical care are bad and does not argue for this assumption.
+[145] Britain has given £14,750,000 in aid to Bengal.
+[146] The decisions and actions of human beings can prevent this kind of suffering in Bengal.
+[147] At least nine million people in East Bengal were turned into destitute refugees by poverty, a cyclone, and a civil war.
+[148] Britain has given £14,750,000 in aid to Bengal.
+[149] If everyone gave up to the point of marginal utility, the total donations would exceed what could be used for the refugees, so some of the sacrifice would have been unnecessary.
+[150] Determining how demanding moral rules should be (so as to maximize compliance without breakdown) is essentially an empirical question about human behavior and social effects.
+[151] Singer chooses the Bengal case as his example because its large scale ensured it received adequate publicity and made it a clear, current instance to discuss.
+[152] Singer judges that it is obvious the large-scale assistance needed for the refugees (on the order estimated by the World Bank) will not be forthcoming from the international community.
+[153] Even the moderate form of the principle that we ought to prevent very bad things when we can without sacrificing anything morally significant would require substantial changes in the way of life of affluent societies.
+[154] It seems unlikely that assistance on the scale needed for the Bengal refugees will be forthcoming.
+[155] The duty-to-prevent principle does not apply when there are no preventable very bad occurrences that can be avoided without sacrificing something of comparable moral importance.
+[156] It may be possible to redraw the distinction between duty and charity in some other place, even though the current way of treating giving to famine relief as merely 'charity' is unjustified.
+[157] Singer uses the Bengal emergency as his example because its large scale ensured it received adequate publicity and it was the current, salient case to discuss.
+[158] Singer does not claim to be morally neutral; he openly takes a moral position on the issue.
+[159] Singer explicitly assumes that suffering and death from lack of food, shelter, and medical care are bad, will not argue for that premise, and invites those who disagree to stop reading.
+[160] Singer does not claim to be morally neutral; he openly takes a moral position and makes his basic assumptions explicit.
+
+
+STATEMENTS WITH ARGUMENTS:
+
+[131] The development of instant communication and rapid transportation (the 'global village') reduces the epistemic and practical differences between helping nearby and distant sufferers, undermining geographic justifications for prioritizing the nearby.
+  ← Argument 44: Since modern communication and transportation make directing aid to distant sufferers practicable (56), and expert observers and aid organizations can effectively supervise relief (71), the development of a 'global village' reduces the epistemic and practical differences between helping nearby and distant sufferers (131).
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+    • [71] Modern communication, transportation, and aid organizations allow expert observers and supervisors to direct relief to distant victims almost as effectively as to nearby victims.
+  ← Argument 45: Because modern communication and transport (56) and the ability of expert observers and aid organizations to direct relief effectively (71) reduce practical and epistemic differences between helping nearby and distant sufferers, it follows that the 'global village' development undermines geographic justifications for prioritizing the nearby (131).
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+    • [71] Modern communication, transportation, and aid organizations allow expert observers and supervisors to direct relief to distant victims almost as effectively as to nearby victims.
+
+[4] The suffering and death in East Bengal are not inevitable; richer nations have the capacity to prevent most of it by providing sufficient assistance.
+  ← Argument 1: Because suffering and death from lack of basic needs are bad (8), and if we can prevent such badness without sacrificing something of comparable moral importance we ought to do so (7), and affluent nations have the capacity to provide sufficient assistance (9), it follows that the suffering and death in East Bengal are not inevitable and could be prevented by richer nations (4).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [7] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, then we ought morally to prevent it.
+    • [9] Affluent nations have the capacity to provide enough assistance to greatly reduce suffering in emergencies like the Bengal famine.
+
+[11] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we are morally obligated to do so.
+  ← Argument 9: Because people are dying in Bengal (1), affluent nations can prevent much of this suffering (9), and we have the principle that we ought to prevent bad things when we can do so without sacrificing something of comparable moral importance (7), it follows that we are morally obligated to prevent the suffering (11).
+    • [1] People are dying in East Bengal from lack of food, shelter, and medical care.
+    • [9] Affluent nations have the capacity to provide enough assistance to greatly reduce suffering in emergencies like the Bengal famine.
+    • [7] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, then we ought morally to prevent it.
+  ← Argument 14: Because neither individuals nor governments can plausibly claim ignorance of the Bengal suffering (62), affluent nations have the capacity to provide sufficient aid (16), and we ought to prevent bad things when we can do so without sacrificing something of comparable moral importance (7), it follows that we are morally obligated to prevent the suffering (11).
+    • [62] Neither individuals nor governments can plausibly claim to be unaware of the suffering in Bengal.
+    • [16] Richer nations have the capacity to provide enough assistance to greatly reduce the suffering of the refugees in East Bengal.
+    • [7] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, then we ought morally to prevent it.
+  ← Argument 50: Because neither individuals nor governments can plausibly claim ignorance of the Bengal suffering (62), we have the principle that we ought to prevent very bad things when we can without comparable sacrifice (27), and people are dying in East Bengal (18), it follows that we are morally obligated to prevent the suffering (11).
+    • [62] Neither individuals nor governments can plausibly claim to be unaware of the suffering in Bengal.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [18] People in East Bengal are dying from lack of food, shelter, and medical care.
+
+[142] The burden of proof is on people who refuse to give privately to show that their refusal will probably cause the government to take large-scale action.
+  ← Argument 53: Given the argument that aid should be a government responsibility (121) and the improbability that withholding private donations will produce government action (58), the burden of proof lies with those who refuse to give to show that their refusal will probably lead to large-scale government assistance (142).
+    • [121] Some people argue that overseas aid should be the government's responsibility, so individuals need not give to private charities.
+    • [58] It is unlikely that refusing to give to private relief funds will cause governments to provide large-scale aid; if anything, lack of voluntary donations makes it more likely governments will assume citizens are uninterested and not increase aid.
+
+[26] Governments have not given the massive aid required; for example, Britain's aid to Bengal was small compared with its spending on projects like the Concorde, implying government priorities place such projects above saving refugee lives.
+  ← Argument 47: Because Britain gave a relatively small amount (£14,750,000) to Bengal (140) while its share of Concorde development costs already exceeds £275,000,000 and is projected to reach about £440,000,000 (141), it implies the British government prioritized costly projects like Concorde over providing massive aid to save refugee lives (26).
+    • [140] Britain has given £14,750,000 to relief for the East Bengal refugees.
+    • [141] Britain's share of the nonrecoverable Anglo‑French Concorde development costs already exceeds £275,000,000 and is projected to reach about £440,000,000.
+  ← Argument 54: Because Britain gave £14,750,000 to Bengal (140) while its share of Concorde nonrecoverable costs already exceeds £275,000,000 (and may reach £440,000,000) (141), this supports the claim that the government prioritized expensive projects over providing massive refugee aid (26).
+    • [140] Britain has given £14,750,000 to relief for the East Bengal refugees.
+    • [141] Britain's share of the nonrecoverable Anglo‑French Concorde development costs already exceeds £275,000,000 and is projected to reach about £440,000,000.
+
+[28] People are dying in East Bengal from lack of food, shelter, and medical care, and this suffering is not inevitable because richer nations have the capacity to provide enough assistance to greatly reduce it.
+  ← Argument 2: Because people are dying in East Bengal (18) and richer nations have the capacity to provide sufficient assistance to greatly reduce that suffering (16), it follows that the suffering is not inevitable and could be prevented (28).
+    • [18] People in East Bengal are dying from lack of food, shelter, and medical care.
+    • [16] Richer nations have the capacity to provide enough assistance to greatly reduce the suffering of the refugees in East Bengal.
+
+[32] Spending money on unnecessary luxuries instead of using it to prevent others from starving is morally wrong; giving to famine relief in such cases is a moral duty, not merely an act of charity or a supererogatory good deed.
+  ← Argument 3: Because suffering and death are bad (8), and we ought to prevent very bad things when we can do so without sacrificing something of comparable moral importance (27), and richer nations can provide enough assistance to prevent much of the suffering (46), it follows that affluent people spending money on nonessential luxuries instead of preventing starvation is morally wrong and giving to famine relief is a duty (32).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [46] Richer nations have the capacity to provide enough assistance to greatly reduce or prevent the suffering and deaths of the Bengal refugees.
+  ← Argument 5: From (8) that suffering and death from lack of essentials are bad, (11) that we are morally obliged to prevent something bad if we can do so without sacrificing something of comparable moral importance, and (9) that affluent nations can provide assistance to greatly reduce such suffering, it follows that spending on unnecessary luxuries instead of preventing starvation is morally wrong and giving to famine relief is a moral duty (statement 32).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [11] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we are morally obligated to do so.
+    • [9] Affluent nations have the capacity to provide enough assistance to greatly reduce suffering in emergencies like the Bengal famine.
+  ← Argument 8: Because suffering and death from lack of essentials are bad (8), and we ought to prevent very bad things when we can without comparable sacrifice (7), yet neither governments (6) nor most individuals (5) have provided sufficient aid, it follows that spending on unnecessary luxuries instead of preventing starvation is morally wrong and donating is a duty (32).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [7] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, then we ought morally to prevent it.
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [5] Most individuals in affluent countries have not responded significantly to the Bengal crisis (they have not given large sums, written representatives, demonstrated, or engaged in substantial political action).
+  ← Argument 13: Because the 'if everyone gave a little it would suffice' argument is hypothetical and does not apply to the actual situation (66), and because we have a moral obligation to prevent bad things when we can do so without sacrificing something of comparable moral importance (21), and neither numbers nor distance lessen that obligation (31), it follows that spending on unnecessary luxuries instead of preventing starvation is morally wrong and giving to famine relief is a duty (32).
+    • [66] The argument that I needn't give more because 'if everyone gave a little it would suffice' is flawed: it relies on a hypothetical premise (that everyone will give) which does not hold in the actual situation, so it does not absolve individuals of additional giving.
+    • [21] If we can prevent something bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+    • [31] Neither physical proximity nor the fact that many others could also help reduces an individual's moral obligation to prevent a very bad occurrence that they can prevent without comparable sacrifice.
+
+[36] For affluent people, spending money on nonessential luxuries instead of giving it to prevent starvation is morally wrong, not merely charitable or supererogatory.
+  ← Argument 6: Because suffering and death from lack of basic needs are bad (8), and if we can prevent such bad outcomes without sacrificing anything of comparable moral importance we ought to do so (11), and affluent nations (and individuals in them) have the capacity to provide aid (9), it follows that spending on nonessential luxuries instead of preventing starvation is morally wrong (36).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [11] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we are morally obligated to do so.
+    • [9] Affluent nations have the capacity to provide enough assistance to greatly reduce suffering in emergencies like the Bengal famine.
+
+[41] The traditional distinction that treats giving to famine relief as charity (optional) rather than a duty cannot be justified for people in affluent societies.
+  ← Argument 20: Because suffering and death from lack of essentials are bad (8), we ought to prevent very bad things when we can without comparable sacrifice (27), and affluent nations/people can provide sufficient assistance (9), the conventional distinction treating giving to famine relief as merely 'charity' rather than a duty cannot be justified for affluent societies (41).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [9] Affluent nations have the capacity to provide enough assistance to greatly reduce suffering in emergencies like the Bengal famine.
+
+[42] Spending money on unnecessary luxury items instead of donating those funds to prevent starvation is morally wrong when the donation would prevent serious suffering.
+  ← Argument 42: Because suffering and death from lack of basic needs are bad (8), we ought to prevent very bad things when we can without sacrificing something of comparable moral importance (27), and buying new clothes for appearance is not a significant sacrifice (116), it follows that spending on such unnecessary luxuries instead of donating to prevent starvation is morally wrong (42).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [116] Buying new clothes to look well-dressed is not necessary for meeting important needs; foregoing such purchases would not be a significant sacrifice.
+
+[43] Private donations alone are not enough; we ought to campaign for governments to give substantially more no-strings-attached aid to relieve famine.
+  ← Argument 4: Given that governments have not provided the massive aid required (6) and most individuals have not given substantial personal assistance (39), private donations alone will not suffice; therefore we ought to campaign for governments to provide substantially more no-strings-attached aid (43).
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [39] Most individuals in affluent countries have not given substantial sums to relief funds, written to representatives, demonstrated, fasted, or otherwise acted significantly to help the Bengal refugees.
+  ← Argument 7: Given that no government has provided the massive aid required and total contributions are far below what is needed (6), and given the moral principle that we ought to prevent very bad things when we can do so without comparable sacrifice (11), we ought not only to donate but also to campaign for governments to provide substantially more no-strings-attached aid (43).
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [11] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we are morally obligated to do so.
+  ← Argument 16: Because refusing to give privately on the grounds that government should act is unjustified unless such refusal will actually cause government action (63), and because campaigning for increased government aid can be as important or more important than individual donations (59), it follows that we ought to campaign for governments to give substantially more no-strings-attached aid (43).
+    • [63] Refusing to give to private famine relief on the grounds that the government should act is not a valid justification unless one can show the refusal will actually cause the government to act; it is more plausible that a lack of voluntary giving will make governments think citizens are uninterested and thus less likely to force government action.
+    • [59] Campaigning for increased government aid can be as important or more important than individual donations in securing relief for famine victims.
+  ← Argument 24: Because most individuals have not made significant contributions (52) and governments have not provided aid at the needed scale and often prioritize other projects (53), and because we ought to prevent very bad things when we can (54), it follows that we ought to campaign for governments to provide substantially more no-strings-attached aid (43).
+    • [52] Most individuals in affluent countries have not made significant personal contributions or political efforts to relieve the Bengal refugees.
+    • [53] Governments have not provided the scale of aid needed; they often prioritize expensive projects over funding sufficient relief for refugees.
+    • [54] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+  ← Argument 30: Since giving to famine relief is a moral duty for affluent individuals (32) and campaigning for increased government aid can be as important or more important than individual donations (59), we ought to campaign for governments to provide substantially more no-strings-attached aid (43).
+    • [32] Spending money on unnecessary luxuries instead of using it to prevent others from starving is morally wrong; giving to famine relief in such cases is a moral duty, not merely an act of charity or a supererogatory good deed.
+    • [59] Campaigning for increased government aid can be as important or more important than individual donations in securing relief for famine victims.
+
+[48] Physical distance (proximity) to those who suffer does not reduce our moral obligation to help them.
+  ← Argument 10: Given the moral principle that we ought to prevent bad things we can prevent (21), and that modern communication and transport allow effective aid to distant sufferers (56), physical distance does not reduce our moral obligation to help (48).
+    • [21] If we can prevent something bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+  ← Argument 11: Because modern communication and transport make effective aid to distant sufferers nearly as reliable as to nearby ones (56), and we ought to prevent very bad things when we can do so without sacrificing something of comparable moral importance (27), physical distance does not reduce our moral obligation to help distant sufferers (48).
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+  ← Argument 12: Because we have the moral principle that we ought to prevent very bad things when we can (54) and modern communication and transportation allow effective aid to distant victims (71), geographic distance does not reduce our moral obligation to help (48).
+    • [54] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to prevent it.
+    • [71] Modern communication, transportation, and aid organizations allow expert observers and supervisors to direct relief to distant victims almost as effectively as to nearby victims.
+  ← Argument 15: Because suffering and death from lack of basic needs are bad (8), we ought to prevent such badness when we can without sacrificing something of comparable moral importance (7), and modern communication and transportation allow effective aid to distant sufferers nearly as well as to nearby ones (56), physical distance does not reduce our moral obligation to help distant victims (48).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [7] If we can prevent something very bad from happening without sacrificing anything of comparable moral importance, then we ought morally to prevent it.
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+  ← Argument 46: Given that the 'global village' reduces the practical differences between helping near and far (131) and the moral principle that we ought to prevent very bad things when we can without sacrificing something of comparable moral importance (27), physical distance does not reduce our moral obligation to help distant sufferers (48).
+    • [131] The development of instant communication and rapid transportation (the 'global village') reduces the epistemic and practical differences between helping nearby and distant sufferers, undermining geographic justifications for prioritizing the nearby.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+  ← Argument 49: If one accepts impartiality (cannot favor near over far) (129), and modern communication and transport make distant aid practicable (56), then physical distance does not reduce our moral obligation to help distant sufferers (48).
+    • [129] If we accept principles of impartiality, universalizability, or equality, then we cannot favor helping people who are geographically nearer over those who are farther away.
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+
+[51] The suffering and deaths in East Bengal are preventable by decisions and actions of richer nations.
+  ← Argument 31: Because the World Bank estimated India needed at least £300M (101), actual contributions so far are far below what's required (6), and richer nations have the capacity to provide sufficient assistance (46), it follows that the suffering and deaths in East Bengal are preventable by decisions and actions of richer nations (51).
+    • [101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [46] Richer nations have the capacity to provide enough assistance to greatly reduce or prevent the suffering and deaths of the Bengal refugees.
+
+[53] Governments have not provided the scale of aid needed; they often prioritize expensive projects over funding sufficient relief for refugees.
+  ← Argument 29: Because governments have not provided the massive aid required (6), the World Bank estimated India needed at least £300,000,000 (101), and Britain prioritized projects like Concorde far above refugee relief (26), it follows that governments have not provided the necessary scale of aid and often prioritize expensive projects over sufficient refugee relief (53).
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+    • [26] Governments have not given the massive aid required; for example, Britain's aid to Bengal was small compared with its spending on projects like the Concorde, implying government priorities place such projects above saving refugee lives.
+  ← Argument 34: Given the World Bank's estimate that India needed at least £300,000,000 (101) and the fact that total contributions were about £65,000,000 and governments have not provided the massive aid required (6), it follows that governments have not given the scale of aid needed and have prioritized other expenditures over sufficient refugee relief (53).
+    • [101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+  ← Argument 35: Because total contributions are far below what is needed (6), the World Bank estimated India needed at least £300,000,000 in assistance (101), and examples like Britain's relatively small aid versus large Concorde expenditures show government priorities favor expensive projects over saving refugees (26), it follows that governments have not provided the scale of aid required and often prioritize costly projects over sufficient relief (53).
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+    • [26] Governments have not given the massive aid required; for example, Britain's aid to Bengal was small compared with its spending on projects like the Concorde, implying government priorities place such projects above saving refugee lives.
+
+[60] Effective population control is the best long-term way to prevent future famines, so those who wish to prevent famine ought to promote and support population-control measures and organizations.
+  ← Argument 28: Because relieving famine now without effective population control risks merely postponing starvation (94), and population control is the best long-term means of preventing recurrent famines (44), it follows that those who wish to prevent famine ought to promote and support population-control measures and organizations (60).
+    • [94] Relieving famine now without effective population control risks merely postponing starvation to future generations.
+    • [44] Population control is the best long-term means of preventing recurrent famines, so we ought to support effective population-control measures and organizations as part of our moral response.
+  ← Argument 37: Since relieving famine now without effective population control merely postpones starvation (94), the best long-term method to prevent recurrent famines is effective population control, which we therefore ought to support (60).
+    • [94] Relieving famine now without effective population control risks merely postponing starvation to future generations.
+
+[61] Modern communication and transportation make it possible to direct effective aid to distant refugees almost as reliably as to people nearby.
+  ← Argument 21: Because modern communication and transport (56) and the ability of expert observers/supervisors and aid organizations to direct relief effectively (71) make aid to distant victims practicable, it follows that we can direct effective aid to distant refugees almost as reliably as to local victims (61).
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+    • [71] Modern communication, transportation, and aid organizations allow expert observers and supervisors to direct relief to distant victims almost as effectively as to nearby victims.
+
+[63] Refusing to give to private famine relief on the grounds that the government should act is not a valid justification unless one can show the refusal will actually cause the government to act; it is more plausible that a lack of voluntary giving will make governments think citizens are uninterested and thus less likely to force government action.
+  ← Argument 52: Because some claim that overseas aid is the government's responsibility (121) but it is unlikely that refusing private donations will prompt governments to act and may instead signal public disinterest (58), refusing to give on the grounds that the government should act is unjustified unless one can show the refusal will actually cause government action (63).
+    • [121] Some people argue that overseas aid should be the government's responsibility, so individuals need not give to private charities.
+    • [58] It is unlikely that refusing to give to private relief funds will cause governments to provide large-scale aid; if anything, lack of voluntary donations makes it more likely governments will assume citizens are uninterested and not increase aid.
+
+[66] The argument that I needn't give more because 'if everyone gave a little it would suffice' is flawed: it relies on a hypothetical premise (that everyone will give) which does not hold in the actual situation, so it does not absolve individuals of additional giving.
+  ← Argument 17: Because an individual's obligation can depend on whether others are expected to give (75,80), the 'if everyone gave £5' argument is hypothetical and does not absolve a person in the actual situation—so the hypothetical premise fails and the individual remains obligated (supports statement 66).
+    • [75] If many others are expected to give, an individual's obligation may be reduced because those who give later, knowing others have already contributed, are in different circumstances from early donors.
+    • [80] Whether others have given or are expected to give is a relevant circumstance that affects an individual's obligation; those who give later, knowing many others have already given, are in different circumstances from those who gave earlier.
+
+[70] Refusing to give to private famine relief is unlikely to produce massive government action, so those who refuse typically prevent a certain amount of suffering without producing any tangible beneficial consequence.
+  ← Argument 25: Because governments have not provided the massive aid required (6) and the World Bank estimated India needed a minimum of £300,000,000 in assistance (101), it is unlikely that refusing private donations will trigger massive government action; therefore those who refuse typically prevent suffering without producing any tangible beneficial consequence (70).
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
+    • [101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+  ← Argument 26: Because it is unlikely that refusing private donations will cause governments to provide large-scale aid (58) and refusing to give is unjustified unless one can show the refusal will cause government action (63), it follows that refusing to give is unlikely to produce massive government action and thus usually prevents suffering without any compensating benefit (70).
+    • [58] It is unlikely that refusing to give to private relief funds will cause governments to provide large-scale aid; if anything, lack of voluntary donations makes it more likely governments will assume citizens are uninterested and not increase aid.
+    • [63] Refusing to give to private famine relief on the grounds that the government should act is not a valid justification unless one can show the refusal will actually cause the government to act; it is more plausible that a lack of voluntary giving will make governments think citizens are uninterested and thus less likely to force government action.
+  ← Argument 27: Because it is unlikely that refusing to give will cause governments to provide large-scale aid (58), and because a refusal is unjustified unless it has a definite probability of producing government action (63), it follows that those who refuse to give typically prevent suffering without producing any tangible beneficial consequence (70).
+    • [58] It is unlikely that refusing to give to private relief funds will cause governments to provide large-scale aid; if anything, lack of voluntary donations makes it more likely governments will assume citizens are uninterested and not increase aid.
+    • [63] Refusing to give to private famine relief on the grounds that the government should act is not a valid justification unless one can show the refusal will actually cause the government to act; it is more plausible that a lack of voluntary giving will make governments think citizens are uninterested and thus less likely to force government action.
+
+[73] Philosophers (and others who reach reflective conclusions) should not limit themselves to discussing famine relief; they ought to act on those conclusions (for example, by giving, campaigning, or changing their lives).
+  ← Argument 19: Because philosophers are competent to take a position on famine (72) and discussion alone is insufficient—those who accept the moral conclusion ought to act (79), philosophers who accept the conclusion should act on it (73).
+    • [72] Philosophers are competent to take a position on famine relief because the facts about the suffering and our capacity to help are not in serious dispute.
+    • [79] Discussion alone is insufficient; those who accept the moral conclusion about preventing famine ought to act on it rather than merely debate it.
+
+[76] Given present conditions in many parts of the world, we morally ought to be working full time to relieve great suffering, unless doing so would require sacrificing something of comparable moral importance.
+  ← Argument 23: Since the Bengal emergency is one of many similar large emergencies (55), and we ought to prevent very bad things when we can do so without sacrificing anything of comparable moral importance (27), and richer nations can provide substantial assistance (46), it follows that under present conditions we morally ought to be working full-time to relieve great suffering unless doing so would require comparable sacrifice (76).
+    • [55] The Bengal emergency is not unique; it is one of many major emergencies around the world and differs mainly in its scale.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [46] Richer nations have the capacity to provide enough assistance to greatly reduce or prevent the suffering and deaths of the Bengal refugees.
+
+[77] Philosophers are competent to take a position on famine relief.
+  ← Argument 51: Because the factual issues about suffering and our ability to help are clear (78) and philosophers are therefore competent to assess such issues (72), philosophers are competent to take a position on famine relief (77).
+    • [72] Philosophers are competent to take a position on famine relief because the facts about the suffering and our capacity to help are not in serious dispute.
+    • [78] Philosophers are competent to take a position on famine relief because the facts about the existence of suffering and our ability to help (via relief or population control) are sufficiently clear.
+
+[81] Philosophers (including teachers and students) who have more money than they need are among those who ought to take a position on famine relief and should begin to act on the conclusions of such reflection.
+  ← Argument 43: Because philosophers are competent to take a position on famine relief (72), and discussion alone is insufficient so those who accept the moral conclusion ought to act (69), it follows that philosophers who have more money than they need ought to take a position on famine relief and begin to act (81).
+    • [72] Philosophers are competent to take a position on famine relief because the facts about the suffering and our capacity to help are not in serious dispute.
+    • [69] Discussion alone is insufficient; those who accept the moral conclusion about famine relief ought to act on it rather than merely debate it.
+
+[88] There are practical limits to how much a society should give: diverting very large percentages of national output could slow the economy enough that total aid in absolute terms might fall, so these economic effects must be considered when determining ideal aid levels.
+  ← Argument 18: Because giving away an excessively large share of national income could slow the economy (83) and a substantially smaller GNP could reduce total absolute aid (85), there are practical limits to how much a society should give (conclusion 88).
+    • [83] Giving away an excessively large share of national income could slow the economy so much that the absolute amount available for aid falls; therefore decisions about how much to give must take into account economic effects on total aid delivered.
+    • [85] If we give away a very large share of our national income so that the economy slows substantially, the resulting smaller Gross National Product could reduce the total amount available for aid, so there is a practical limit to how much deliberately slowing the economy for overseas aid will increase absolute assistance.
+  ← Argument 22: Because giving away an excessively large share of national income could slow the economy and reduce total aid (83), and because a smaller GDP resulting from such a slowdown could lower the absolute amount available for aid (85), it follows that there are practical limits to how much a society should give and economic effects must be considered when setting ideal aid levels (88).
+    • [83] Giving away an excessively large share of national income could slow the economy so much that the absolute amount available for aid falls; therefore decisions about how much to give must take into account economic effects on total aid delivered.
+    • [85] If we give away a very large share of our national income so that the economy slows substantially, the resulting smaller Gross National Product could reduce the total amount available for aid, so there is a practical limit to how much deliberately slowing the economy for overseas aid will increase absolute assistance.
+
+[92] Our moral conceptual scheme must be revised and the accustomed way of life in affluent societies must change in order to meet the moral obligations to prevent distant suffering.
+  ← Argument 32: Since physical distance does not reduce our moral obligation to help (48) and the existence of many others in the same position does not lessen individual obligation (35), our moral conceptual scheme and customary affluent way of life must be revised to meet these obligations (92).
+    • [48] Physical distance (proximity) to those who suffer does not reduce our moral obligation to help them.
+    • [35] The existence of many other people in the same position does not reduce any one person's obligation to prevent a very bad outcome.
+  ← Argument 33: Because the consumer society distorts people's goals and makes them less likely to prioritize famine relief (107), and because moral standards and expectations strongly influence what people do (84), our moral conceptual scheme must be revised and the accustomed way of life in affluent societies must change to meet obligations to prevent distant suffering (92).
+    • [107] The consumer society distorts the goals and purposes of its members, making them less likely to prioritize giving to famine relief.
+    • [84] Moral standards and expectations strongly influence what people do; changing those standards can increase compliance with more demanding moral requirements.
+  ← Argument 48: Because suffering and death from lack of basic needs are bad (8), we ought to prevent very bad things when we can without sacrificing something of comparable moral importance (27), and neither physical distance (48) nor the existence of many others in the same position (35) reduces our individual obligation, it follows that our moral conceptual scheme and the accustomed affluent way of life must be revised to meet these obligations (92).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [48] Physical distance (proximity) to those who suffer does not reduce our moral obligation to help them.
+    • [35] The existence of many other people in the same position does not reduce any one person's obligation to prevent a very bad outcome.
+
+[93] Raising moral demands (asking people to give much more) is unlikely to cause a general breakdown of moral behavior and may be worth the risk because shifting social expectations can increase compliance and reduce starvation.
+  ← Argument 39: Since moral standards and expectations strongly influence actions (84) and what people around us do and expect affects what individuals can realistically do (96), raising moral demands and expectations is unlikely to cause general moral breakdown and may increase compliance to reduce starvation (93).
+    • [84] Moral standards and expectations strongly influence what people do; changing those standards can increase compliance with more demanding moral requirements.
+    • [96] What people around us do and expect strongly influences what individuals are likely to do and what is realistically possible for them to do.
+
+[95] From the moral point of view, preventing the starvation of millions abroad is at least as pressing as upholding property norms within our own society.
+  ← Argument 36: Because suffering and death from lack of essentials are bad (8), we have a moral duty to prevent very bad things when we can without comparable sacrifice (27), and modern communication/transport make distant aid practicable (56), it follows that preventing starvation abroad is at least as pressing morally as upholding domestic property norms (95).
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+    • [27] If it is within our power to prevent something very bad from happening without sacrificing anything of comparable moral importance, we morally ought to do so.
+    • [56] Modern improvements in communication and transportation make it possible to direct effective aid to distant sufferers nearly as well as to nearby ones.
+  ← Argument 38: Because the moral point of view requires acting to prevent suffering beyond our own society (126), and suffering and death from lack of basic needs are bad (8), it follows that preventing the starvation of millions abroad is at least as pressing as upholding property norms at home (95).
+    • [126] The moral point of view requires us to care about and act to prevent suffering beyond the interests of our own society.
+    • [8] Suffering and death from lack of food, shelter, or medical care are bad.
+
+[113] Campaigning for increased government aid is unlikely to be effective if one only preaches without also practicing giving; campaigning is more effective when accompanied by personal contributions.
+  ← Argument 41: Because preaching without practicing undermines effectiveness (122) and giving to famine relief is a moral duty for affluent individuals (32), campaigning for government aid while not personally contributing is unlikely to be effective (113).
+    • [122] Campaigning for greater government aid is likely to be ineffective if one preaches it without practicing it oneself; 'preaching what one does not practice' undermines effectiveness.
+    • [32] Spending money on unnecessary luxuries instead of using it to prevent others from starving is morally wrong; giving to famine relief in such cases is a moral duty, not merely an act of charity or a supererogatory good deed.
+
+[119] India would be forced to choose between letting the refugees starve or diverting funds from its own development program, which would cause more of India's own people to starve in the future.
+  ← Argument 40: Because the World Bank estimated India needed at least £300,000,000 in external assistance (101) and total contributions and government aid so far are far below what is required (6), India would be forced to choose between letting the refugees starve or diverting funds from its own development program (119).
+    • [101] The World Bank estimated that India needed at least £300,000,000 in assistance from other countries before the end of the year.
+    • [6] No government has provided the large-scale aid needed to sustain the refugees; total contributions (about £65,000,000) are far below the estimated one-year cost of keeping the refugees alive (about £464,000,000).
