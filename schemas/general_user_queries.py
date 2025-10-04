@@ -2,11 +2,16 @@
 from __future__ import annotations
 from typing import List, Tuple, Dict, Any, Optional, Callable
 from dataclasses import dataclass
-import json, os, re, math
+import json, os, math
 from collections import defaultdict
+from openai import OpenAI  # type: ignore
+from sentence_transformers import SentenceTransformer  # type: ignore
+import json
+from pathlib import Path
+import argparse
 
 # --- Your schema ---
-from analysis import Claim, Argument
+from analysis import Statement, Argument, Artifact, Quote
 
 # =============== Utilities ===============
 
@@ -25,7 +30,6 @@ class SentenceTransformerEmbeddings(EmbeddingBackend):
     Offline-friendly, pip install sentence-transformers
     """
     def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
-        from sentence_transformers import SentenceTransformer  # type: ignore
         self.model = SentenceTransformer(model_name)
 
     def embed_texts(self, texts: List[str]) -> List[List[float]]:
@@ -36,28 +40,28 @@ class SentenceTransformerEmbeddings(EmbeddingBackend):
 @dataclass
 class LLMResult:
     answer: str
-    highlight_claim_ids: List[int]
+    highlight_statement_ids: List[int]
     highlight_argument_ids: List[int]
-    derived_claim_ids: List[int]  # optional, possibly empty
-    notes: str                    # optional, possibly empty
+    derived_statement_ids: List[int]  # optional, possibly empty
+    notes: str                        # optional, possibly empty
 
 def _default_system_prompt() -> str:
     return (
         "You are a precise reasoning assistant working over a *directed acyclic graph (DAG)* of beliefs.\n"
         "The graph consists of:\n"
-        "- Claims (nodes), each with a unique integer id and a short description.\n"
-        "- Arguments (hyperedges), each with a unique integer id, a list of premise claim ids, "
-        "  and a single conclusion claim id. Semantics: if *all* premises are true, the conclusion is supported.\n\n"
+        "- Statements (nodes), each with a unique integer id and short text.\n"
+        "- Arguments (hyperedges), each with a unique integer id, a list of premise statement ids,\n"
+        "  and a single conclusion statement id. Semantics: if *all* premises are true, the conclusion is supported.\n\n"
         "Your job: given a natural-language query and the graph (subset), produce:\n"
         "1) A concise direct answer to the query (<= 6 sentences, neutral tone).\n"
-        "2) The ids of claims to *highlight* as most relevant evidence (they might be premises, conclusions, or axioms).\n"
-        "3) The ids of arguments to highlight (those that most directly connect the highlighted claims to the answer).\n"
-        "4) Optionally, ids of claims that are *derivable* in light of this query (if the query implies some forward chaining).\n"
-        "5) A brief note field (1-3 sentences) with justification using claim ids only. DO NOT reveal chain-of-thought.\n\n"
+        "2) The ids of statements to *highlight* as most relevant evidence (premises, conclusions, or axioms).\n"
+        "3) The ids of arguments to highlight (those that most directly connect the highlighted statements to the answer).\n"
+        "4) Optionally, ids of statements that are *derivable* in light of this query (if the query implies forward chaining).\n"
+        "5) A brief note field (1-3 sentences) with justification using statement/argument ids only. DO NOT reveal chain-of-thought.\n\n"
         "Rules:\n"
-        "- ONLY use claims/arguments that appear in the provided graph chunk. Do not invent ids or content.\n"
+        "- ONLY use statements/arguments that appear in the provided graph chunk. Do not invent ids or content.\n"
         "- Prefer minimal, non-redundant highlight sets that make the reasoning legible.\n"
-        "- If the query asks for contradictions, choose pairs of claims that conflict (semantic opposition) and highlight the linking arguments if relevant.\n"
+        "- If the query asks for contradictions, choose pairs of statements that conflict and highlight the linking arguments if relevant.\n"
         "- If nothing in the graph answers the question, say so and return empty highlight lists.\n"
         "- Output STRICT JSON conforming to the schema provided, with keys in lower_snake_case.\n"
     )
@@ -69,36 +73,46 @@ Return JSON exactly like this (no prose before or after):
 
 {
   "answer": "string, <= 6 sentences, neutral and direct.",
-  "highlight_claim_ids": [1, 2, 3],
+  "highlight_statement_ids": [1, 2, 3],
   "highlight_argument_ids": [10, 11],
-  "derived_claim_ids": [4, 5],
-  "notes": "brief justification using claim ids only, e.g. 'Used C1,C2 -> A10 -> C5'."
+  "derived_statement_ids": [4, 5],
+  "notes": "brief justification using ids only, e.g. 'Used S1,S2 -> A10 -> S5'."
 }
 
 Where:
-- highlight_claim_ids: integer ids of claims to light up
+- highlight_statement_ids: integer ids of statements to light up
 - highlight_argument_ids: integer ids of arguments to light up
-- derived_claim_ids: integer ids of conclusions that follow given the query context (can be empty)
+- derived_statement_ids: integer ids of conclusions that follow given the query context (can be empty)
 - If nothing applies, use empty arrays and a helpful 'answer'.
 """
 
-def _serialize_graph_for_llm(claims: List[Claim], arguments: List[Argument]) -> Dict[str, Any]:
+def _serialize_graph_for_llm(statements: List[Statement], arguments: List[Argument]) -> Dict[str, Any]:
     # Compact, ID-first JSON the LLM can reason over reliably.
-    claims_json = [
-        {
-            "id": c.id,
-            "desc": c.desc,
-            "artifact": {
-                "id": c.artifact.id,
-                "name": c.artifact.name,
-                "author": c.artifact.author,
-                "title": getattr(c.artifact, "title", getattr(c.artifact, "tile", "")),
-                "year": c.artifact.year,
-            } if getattr(c, "artifact", None) else None,
-            # quotes/citations omitted to save tokens; add if helpful
-        }
-        for c in claims
-    ]
+    stmts_json = []
+    for s in statements:
+        # artifacts is a list[Artifact]
+        arts = []
+        if getattr(s, "artifact", None):
+            for a in s.artifact:
+                arts.append({
+                    "id": a.id,
+                    "name": a.name,
+                    "author": a.author,
+                    "title": a.title,
+                    "year": a.year,
+                })
+        cites = []
+        if getattr(s, "citations", None):
+            for q in s.citations:
+                cites.append({"page": q.page, "text": q.text})
+
+        stmts_json.append({
+            "id": s.id,
+            "text": s.statement,
+            "artifacts": arts,       # list, may be empty
+            "citations": cites,      # list, may be empty
+        })
+
     args_json = [
         {
             "id": a.id,
@@ -108,12 +122,12 @@ def _serialize_graph_for_llm(claims: List[Claim], arguments: List[Argument]) -> 
         }
         for a in arguments
     ]
-    return {"claims": claims_json, "arguments": args_json}
+    return {"statements": stmts_json, "arguments": args_json}
 
-def _build_prompt(query: str, claims: List[Claim], arguments: List[Argument]) -> List[Dict[str, str]]:
+def _build_prompt(query: str, statements: List[Statement], arguments: List[Argument]) -> List[Dict[str, str]]:
     sys = _default_system_prompt()
     schema = _response_schema_text()
-    graph_json = _serialize_graph_for_llm(claims, arguments)
+    graph_json = _serialize_graph_for_llm(statements, arguments)
     user = {
         "role": "user",
         "content": (
@@ -127,56 +141,80 @@ def _build_prompt(query: str, claims: List[Claim], arguments: List[Argument]) ->
 def _extract_first_json(s: str) -> str:
     """
     Robustly extract the first {...} JSON object from a model response.
+    Uses brace counting (Python's 're' lacks recursive patterns).
     """
-    # Fast path: already a JSON object
-    s_strip = s.strip()
-    if s_strip.startswith("{") and s_strip.endswith("}"):
-        return s_strip
-    # Fallback: regex the first balanced-looking JSON object
-    match = re.search(r"\{(?:[^{}]|(?R))*\}", s, flags=re.DOTALL)
-    if match:
-        return match.group(0)
-    # Last resort: try to trim before first '{' and after last '}'
-    if "{" in s and "}" in s:
-        start, end = s.find("{"), s.rfind("}")
-        return s[start:end+1]
+    s = s.strip()
+    # Fast path: exactly one object
+    if s.startswith("{") and s.endswith("}"):
+        # Quick validation
+        try:
+            json.loads(s)
+            return s
+        except Exception:
+            pass
+
+    # Scan for first balanced object
+    depth = 0
+    start = -1
+    for i, ch in enumerate(s):
+        if ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}":
+            if depth > 0:
+                depth -= 1
+                if depth == 0 and start != -1:
+                    candidate = s[start:i+1]
+                    try:
+                        json.loads(candidate)
+                        return candidate
+                    except Exception:
+                        # keep scanning for next balanced candidate
+                        start = -1
+                        continue
     raise ValueError("Could not locate JSON in model output.")
 
 def _parse_llm_json(payload: str) -> LLMResult:
     obj = json.loads(payload)
     # Soft validation with defaults
     answer = obj.get("answer", "").strip()
-    h_claims = [int(x) for x in obj.get("highlight_claim_ids", []) if isinstance(x, (int, str))]
+    h_statements = [int(x) for x in obj.get("highlight_statement_ids", []) if isinstance(x, (int, str))]
     h_args = [int(x) for x in obj.get("highlight_argument_ids", []) if isinstance(x, (int, str))]
-    d_claims = [int(x) for x in obj.get("derived_claim_ids", []) if isinstance(x, (int, str))]
+    d_statements = [int(x) for x in obj.get("derived_statement_ids", []) if isinstance(x, (int, str))]
     notes = obj.get("notes", "").strip()
-    return LLMResult(answer=answer, highlight_claim_ids=h_claims,
-                     highlight_argument_ids=h_args, derived_claim_ids=d_claims, notes=notes)
+    return LLMResult(
+        answer=answer,
+        highlight_statement_ids=h_statements,
+        highlight_argument_ids=h_args,
+        derived_statement_ids=d_statements,
+        notes=notes
+    )
 
 # =============== Optional prefiltering ===============
 def _prefilter_graph_by_embeddings(
     query: str,
-    claims: List[Claim],
+    statements: List[Statement],
     arguments: List[Argument],
     embedder: Optional[EmbeddingBackend],
-    max_claims: int = 200,
+    max_statements: int = 200,
     max_arguments: int = 400,
-) -> Tuple[List[Claim], List[Argument]]:
+) -> Tuple[List[Statement], List[Argument]]:
     """
-    Keeps payloads small. If embedder is provided, rank claims by similarity to query.
+    Keeps payloads small. If embedder is provided, rank statements by similarity to query.
     Then keep any argument whose premises or conclusion survive.
     """
-    if embedder is None or len(claims) <= max_claims:
-        return claims, arguments
+    if embedder is None or len(statements) <= max_statements:
+        return statements, arguments
 
-    texts = [c.desc for c in claims] + [query]
+    texts = [s.statement for s in statements] + [query]
     vecs = embedder.embed_texts(texts)
     qv = vecs[-1]
     scores = [(_cosine(v, qv), i) for i, v in enumerate(vecs[:-1])]
     scores.sort(reverse=True)
-    keep_idx = {i for _, i in scores[:max_claims]}
-    kept_claims = [c for i, c in enumerate(claims) if i in keep_idx]
-    kept_ids = {c.id for c in kept_claims}
+    keep_idx = {i for _, i in scores[:max_statements]}
+    kept_statements = [s for i, s in enumerate(statements) if i in keep_idx]
+    kept_ids = {s.id for s in kept_statements}
 
     kept_args = [
         a for a in arguments
@@ -184,46 +222,46 @@ def _prefilter_graph_by_embeddings(
     ]
     if len(kept_args) > max_arguments:
         kept_args = kept_args[:max_arguments]
-    return kept_claims, kept_args
+    return kept_statements, kept_args
 
 # =============== Public API ===============
 
 def query_graph(
     query: str,
-    claims: List[Claim],
+    statements: List[Statement],
     arguments: List[Argument],
     *,
     llm_call: Optional[Callable[[List[Dict[str, str]]], str]] = None,
     embedder: Optional[EmbeddingBackend] = None,
     prefilter: bool = True,
-) -> Tuple[List[Claim], List[Argument], str]:
+) -> Tuple[List[Statement], List[Argument], str]:
     """
     Calls an LLM with (query + serialized graph), expects STRICT JSON response with:
-      { answer, highlight_claim_ids, highlight_argument_ids, derived_claim_ids, notes }
+      { answer, highlight_statement_ids, highlight_argument_ids, derived_statement_ids, notes }
 
-    Returns: (highlighted_claims, highlighted_arguments, answer_string)
+    Returns: (highlighted_statements, highlighted_arguments, answer_string)
 
     Parameters:
       - llm_call: a callable that accepts OpenAI/Anthropic-style messages and returns the raw model text.
                   If None, tries OpenAI via environment (OPENAI_API_KEY).
-      - embedder: optional embedding backend to preselect top-k claims for context (keeps prompts short).
+      - embedder: optional embedding backend to preselect top-k statements for context (keeps prompts short).
       - prefilter: disable to send the whole graph (for small graphs).
     """
     # Optional payload reduction
-    c_list, a_list = (claims, arguments)
+    s_list, a_list = (statements, arguments)
     if prefilter:
-        c_list, a_list = _prefilter_graph_by_embeddings(query, claims, arguments, embedder)
+        s_list, a_list = _prefilter_graph_by_embeddings(query, statements, arguments, embedder)
 
-    messages = _build_prompt(query, c_list, a_list)
+    messages = _build_prompt(query, s_list, a_list)
 
     # --- LLM call strategy ---
     if llm_call is None:
-        # Try OpenAI new SDK (client = OpenAI(); client.chat.completions.create)
+        # OpenAI chat.completions API via new SDK
         api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:
             raise RuntimeError("No llm_call provided and OPENAI_API_KEY not set.")
         try:
-            from openai import OpenAI  # type: ignore
+            
             client = OpenAI(api_key=api_key)
             resp = client.chat.completions.create(
                 model=os.getenv("LLM_MODEL", "gpt-4o-mini"),
@@ -249,7 +287,6 @@ def query_graph(
                                         "Please return only a single JSON object matching the required schema."}
         ]
         if llm_call is None:
-            from openai import OpenAI  # type: ignore
             client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
             retry = client.chat.completions.create(
                 model=os.getenv("LLM_MODEL", "gpt-4o-mini"),
@@ -264,17 +301,17 @@ def query_graph(
         parsed = _parse_llm_json(json_text)
 
     # Map ids -> objects (restrict to original full lists so lights align with UI)
-    claim_by_id = {c.id: c for c in claims}
+    stmt_by_id = {s.id: s for s in statements}
     arg_by_id = {a.id: a for a in arguments}
-    highlight_claims = [claim_by_id[i] for i in parsed.highlight_claim_ids if i in claim_by_id]
+    highlight_statements = [stmt_by_id[i] for i in parsed.highlight_statement_ids if i in stmt_by_id]
     highlight_arguments = [arg_by_id[i] for i in parsed.highlight_argument_ids if i in arg_by_id]
 
-    # You may also compute auto-highlights for derived ids if not returned:
-    for did in parsed.derived_claim_ids:
-        if did in claim_by_id and all(c.id != did for c in highlight_claims):
-            highlight_claims.append(claim_by_id[did])
+    # Optionally add derived statements if not already highlighted:
+    for did in parsed.derived_statement_ids:
+        if did in stmt_by_id and all(s.id != did for s in highlight_statements):
+            highlight_statements.append(stmt_by_id[did])
 
-    return highlight_claims, highlight_arguments, parsed.answer
+    return highlight_statements, highlight_arguments, parsed.answer
 
 # ================= Examples =================
 
@@ -283,9 +320,8 @@ def openai_llm_call_factory(model: str = "gpt-4o-mini", temperature: float = 0.2
     Example adapter for OpenAI's Chat Completions API.
     Usage:
         llm = openai_llm_call_factory("gpt-4o-mini")
-        query_graph("Do I endorse compatibilism?", claims, arguments, llm_call=llm)
+        query_graph("Do I endorse compatibilism?", statements, arguments, llm_call=llm)
     """
-    from openai import OpenAI  # type: ignore
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     def _call(messages: List[Dict[str, str]]) -> str:
         resp = client.chat.completions.create(
@@ -298,14 +334,51 @@ def openai_llm_call_factory(model: str = "gpt-4o-mini", temperature: float = 0.2
     return _call
 
 
+def process_json(path: str) -> Tuple[List[Statement], List[Argument]]:
+    data = json.loads(Path(path).read_text())
+    statements = []
+    for s in data["statements"].values():
+        s_obj = Statement(id=0, artifact=[], statement="", citations=[])
+        s_obj.id = s["id"]
+        s_obj.artifact = [Artifact(**art) for art in s["artifact"]]
+        s_obj.citations = [Quote(**q) for q in s.get("citations", [])]
+        s_obj.statement = s["statement"]
+        statements.append(s_obj)
+    arguments = []
+    for a in data["arguments"].values():
+        a_obj = Argument(id=0,premise=[],conclusion=Statement(id=0,artifact=[],statement="",citations=[]),desc="")
+        for p in a["premise"]:
+            p_obj = next((s for s in statements if s.id == int(p)), None)
+            if p_obj is None:
+                raise ValueError(f"Premise ID {p} not found in statements.")
+            a_obj.premise.append(p_obj)
+        a_obj.conclusion = next((s for s in statements if s.id == int(a["conclusion"])), None)
+        if a_obj.conclusion is None:
+            raise ValueError(f"Conclusion ID {a['conclusion']} not found in statements.")
+        a_obj.id = a["id"]
+        a_obj.desc = a.get("desc", "")
+        arguments.append(a_obj)
+    return statements, arguments
+
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--datafile", type=str, required=True, help="Path to JSON file with statements and arguments.")
+    args = parser.parse_args()
+    data = json.loads(Path(args.datafile).read_text())
+
+    statements, arguments = process_json(args.datafile)
+
     embedder = SentenceTransformerEmbeddings()  # or None
 
     llm = openai_llm_call_factory(model="gpt-4o-mini")
-    hi_claims, hi_args, answer = query_graph(
-        "If I accept free will and determinism, what follows?",
-        claims, arguments,
+    hi_statements, hi_args, answer = query_graph(
+        "I believe in helping my local community more than distant causes. What arguments and evidence support this?",
+        statements, arguments,
         llm_call=llm,
         embedder=embedder,
         prefilter=True,
     )
+    print("Highlighted Statements:", [s.id for s in hi_statements])
+    print("Highlighted Arguments:", [a.id for a in hi_args])
+    print("Answer:", answer)
