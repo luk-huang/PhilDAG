@@ -119,19 +119,35 @@ def _serialize_graph_for_llm(claims: List[Claim], arguments: List[Argument]) -> 
     ]
     return {"claims": claims_json, "arguments": args_json}
 
-def _build_prompt(query: str, claims: List[Claim], arguments: List[Argument]) -> List[Dict[str, str]]:
+def _build_prompt(
+    query: str,
+    claims: List[Claim],
+    arguments: List[Argument],
+    history: Optional[List[Dict[str, str]]] = None,
+) -> List[Dict[str, str]]:
     sys = _default_system_prompt()
     schema = _response_schema_text()
     graph_json = _serialize_graph_for_llm(claims, arguments)
-    user = {
+
+    messages: List[Dict[str, str]] = [{"role": "system", "content": sys}]
+    if history:
+        for turn in history:
+            role = turn.get("role")
+            content = (turn.get("content") or "").strip()
+            if role not in {"user", "assistant"} or not content:
+                continue
+            messages.append({"role": role, "content": content})
+
+    messages.append({
         "role": "user",
         "content": (
             f"QUERY:\n{query}\n\n"
             f"GRAPH:\n{json.dumps(graph_json, ensure_ascii=False)}\n\n"
             f"{schema}"
         )
-    }
-    return [{"role": "system", "content": sys}, user]
+    })
+
+    return messages
 
 def _extract_first_json(s: str) -> str:
     """
@@ -205,6 +221,7 @@ def query_graph(
     llm_call: Optional[Callable[[List[Dict[str, str]]], str]] = None,
     embedder: Optional[EmbeddingBackend] = None,
     prefilter: bool = True,
+    history: Optional[List[Dict[str, str]]] = None,
 ) -> Tuple[List[Claim], List[Argument], str]:
     """
     Calls an LLM with (query + serialized graph), expects STRICT JSON response with:
@@ -217,13 +234,14 @@ def query_graph(
                   If None, tries OpenAI via environment (OPENAI_API_KEY).
       - embedder: optional embedding backend to preselect top-k claims for context (keeps prompts short).
       - prefilter: disable to send the whole graph (for small graphs).
+      - history: optional list of prior conversation turns, e.g. [{"role": "user", "content": "..."}].
     """
     # Optional payload reduction
     c_list, a_list = (claims, arguments)
     if prefilter:
         c_list, a_list = _prefilter_graph_by_embeddings(query, claims, arguments, embedder)
 
-    messages = _build_prompt(query, c_list, a_list)
+    messages = _build_prompt(query, c_list, a_list, history)
 
     # --- LLM call strategy ---
     if llm_call is None:

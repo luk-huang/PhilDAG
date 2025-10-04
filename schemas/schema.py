@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import BaseModel
 
 class Quote(BaseModel):
@@ -27,6 +29,10 @@ class GraphData(BaseModel):
     statements: list[Statement]
     arguments: list[Argument]
 
+class ConversationMessage(BaseModel):
+    role: Literal["user", "assistant"]
+    content: str
+
 class AskPhilResponse(BaseModel):
     answer: str
     subgraph: GraphData
@@ -35,3 +41,4 @@ class AskPhilRequest(BaseModel):
     question: str
     deepdag: bool = False
     graph: GraphData
+    history: list[ConversationMessage] = []

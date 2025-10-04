@@ -242,3 +242,60 @@ button:disabled {
   margin-bottom: 2rem;
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
+
+.assistant-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.assistant-chat__message {
+  max-width: min(720px, 90%);
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.assistant-chat__message--user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, rgba(226, 232, 255, 0.9), rgba(210, 215, 255, 0.9));
+  border-color: rgba(191, 197, 255, 0.75);
+}
+
+.assistant-chat__message--assistant {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.assistant-chat__message span {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.assistant-chat__form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.assistant-chat__input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(203, 213, 225, 0.75);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  color: #1f2937;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.assistant-chat__input:focus {
+  outline: none;
+  border-color: rgba(79, 70, 229, 0.55);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+}

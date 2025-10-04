@@ -35,6 +35,7 @@ def extract_graph(file_path: Path, client: genai.Client) -> GraphData:
             response_mime_type='application/json'
         )
     )
+    
     test_analysis: GraphData = output.parsed
     print("Done! Passing to frontend")
     return test_analysis

@@ -10,7 +10,7 @@ export interface Artifact {
   id: number;
   name: string;
   author: string;
-  tile: string;
+  title: string;
   year: string;
   statements?: Statement[];
 }
@@ -36,10 +36,16 @@ export interface GraphData {
   arguments?: Argument[];
 }
 
+export interface ConversationTurn {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export interface AskPhilRequest {
   question: string;
   deepdag?: boolean;
   graph?: GraphData;
+  history?: ConversationTurn[];
 }
 
 export interface AskPhilResponse {

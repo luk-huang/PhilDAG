@@ -11,11 +11,17 @@ async def ask_phil(payload: AskPhilRequest):
     graph = payload.graph
     deepdag = payload.deepdag
     question = payload.question
+    history = [
+        {"role": turn.role, "content": turn.content}
+        for turn in payload.history
+    ]
+
     highlight_claims, highlight_arguments, answer = query_graph(
         query=question,
         claims=graph.statements,
         arguments=graph.arguments,
         prefilter=not deepdag,
+        history=history,
     )
     return AskPhilResponse(
         answer=answer,
