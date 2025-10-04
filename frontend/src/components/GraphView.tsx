@@ -28,28 +28,27 @@ type Artifact = {
   year: string;
 };
 
-type Claim = {
+type Statement = {
   id: number;
-  artifact: Artifact;
-  desc: string;
-  quotes?: Quote[];
-  citations?: string[];
+  artifact: Artifact[];
+  statement: string;
+  citations?: Quote[];
 };
 
 type Argument = {
   id: number;
-  premise: Claim[];
-  conclusion: Claim;
+  premise: Statement[];
+  conclusion: Statement;
   desc: string;
 };
 
 export type GraphData = {
-  claims?: Claim[];
+  statements?: Statement[];
   arguments?: Argument[];
 };
 
-type ClaimRole = 'premise' | 'conclusion' | 'both' | 'isolated';
-type NodeRole = ClaimRole | 'argument';
+type StatementRole = 'premise' | 'conclusion' | 'both' | 'isolated';
+type NodeRole = StatementRole | 'argument';
 
 type SimNode = SimulationNodeDatum & {
   id: string;
@@ -222,40 +221,40 @@ export function GraphView({ graph }: Props) {
 
 function buildSimulationGraph(graph: GraphData): PreparedGraph {
   const argumentsList = graph.arguments ?? [];
-  const explicitClaims = graph.claims ?? [];
+  const explicitStatements = graph.statements ?? [];
 
-  const claimMap = new Map<number, Claim>();
-  explicitClaims.forEach((claim) => {
-    if (claim?.id !== undefined && claim !== null) {
-      claimMap.set(claim.id, claim);
+  const statementMap = new Map<number, Statement>();
+  explicitStatements.forEach((statement) => {
+    if (statement?.id !== undefined && statement !== null) {
+      statementMap.set(statement.id, statement);
     }
   });
 
-  const claimRoles = new Map<number, ClaimRole>();
+  const statementRoles = new Map<number, StatementRole>();
 
   argumentsList.forEach((argument) => {
     argument.premise.forEach((premise) => {
-      claimMap.set(premise.id, premise);
-      const previous = claimRoles.get(premise.id);
+      statementMap.set(premise.id, premise);
+      const previous = statementRoles.get(premise.id);
       if (previous === 'conclusion') {
-        claimRoles.set(premise.id, 'both');
+        statementRoles.set(premise.id, 'both');
       } else if (!previous || previous === 'isolated') {
-        claimRoles.set(premise.id, 'premise');
+        statementRoles.set(premise.id, 'premise');
       }
     });
 
-    claimMap.set(argument.conclusion.id, argument.conclusion);
-    const conclusionRole = claimRoles.get(argument.conclusion.id);
+    statementMap.set(argument.conclusion.id, argument.conclusion);
+    const conclusionRole = statementRoles.get(argument.conclusion.id);
     if (conclusionRole === 'premise') {
-      claimRoles.set(argument.conclusion.id, 'both');
+      statementRoles.set(argument.conclusion.id, 'both');
     } else if (!conclusionRole || conclusionRole === 'isolated') {
-      claimRoles.set(argument.conclusion.id, 'conclusion');
+      statementRoles.set(argument.conclusion.id, 'conclusion');
     }
   });
 
-  claimMap.forEach((claim) => {
-    if (!claimRoles.has(claim.id)) {
-      claimRoles.set(claim.id, 'isolated');
+  statementMap.forEach((statement) => {
+    if (!statementRoles.has(statement.id)) {
+      statementRoles.set(statement.id, 'isolated');
     }
   });
 
@@ -279,8 +278,8 @@ function buildSimulationGraph(graph: GraphData): PreparedGraph {
     argument: argumentsList.length,
   };
 
-  claimMap.forEach((claim) => {
-    const role = claimRoles.get(claim.id) ?? 'isolated';
+  statementMap.forEach((statement) => {
+    const role = statementRoles.get(statement.id) ?? 'isolated';
     roleTotals[role] += 1;
   });
 
@@ -291,15 +290,15 @@ function buildSimulationGraph(graph: GraphData): PreparedGraph {
     return (index - (total - 1) / 2) * spacing;
   };
 
-  claimMap.forEach((claim) => {
-    const role = claimRoles.get(claim.id) ?? 'isolated';
-    const nodeId = claimNodeId(claim.id);
+  statementMap.forEach((statement) => {
+    const role = statementRoles.get(statement.id) ?? 'isolated';
+    const nodeId = statementNodeId(statement.id);
     if (registered.has(nodeId)) return;
     registered.add(nodeId);
     const style = ROLE_STYLES[role];
     nodes.push({
       id: nodeId,
-      label: claim.desc,
+      label: statement.statement,
       role,
       radius: style.radius,
       fill: style.fill,
@@ -325,18 +324,18 @@ function buildSimulationGraph(graph: GraphData): PreparedGraph {
     }
 
     argument.premise.forEach((premise) => {
-      const sourceId = claimNodeId(premise.id);
+      const sourceId = statementNodeId(premise.id);
       links.push({ source: sourceId, target: nodeId });
     });
 
-    links.push({ source: nodeId, target: claimNodeId(argument.conclusion.id) });
+    links.push({ source: nodeId, target: statementNodeId(argument.conclusion.id) });
   });
 
   return { nodes, links };
 }
 
-function claimNodeId(id: number): string {
-  return `claim-${id}`;
+function statementNodeId(id: number): string {
+  return `statement-${id}`;
 }
 
 function argumentNodeId(id: number): string {

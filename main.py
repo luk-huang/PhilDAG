@@ -1,6 +1,20 @@
-def main():
-    print("Hello from phildag!")
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from routes.analyze import router as analyze_router
+import uvicorn
 
+
+app = FastAPI(title="PhilDAG")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(analyze_router, prefix="/analyze", tags=["analyze"])
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run("main::app", host = "127.0.0.1", port = 8000, reload = True)

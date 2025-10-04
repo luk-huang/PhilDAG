@@ -13,30 +13,27 @@ const sampleArtifact = {
 
 const samplePremise1 = {
   id: 1,
-  artifact: sampleArtifact,
-  desc: 'The prisoners only see shadows cast upon the cave wall, mistaking them for reality.',
-  quotes: [{ page: 1, text: 'Behold! human beings living in an underground den...' }],
-  citations: ['Republic 514a-515c'],
+  artifact: [sampleArtifact],
+  statement: 'The prisoners only see shadows cast upon the cave wall, mistaking them for reality.',
+  citations: [{ page: 1, text: 'Behold! human beings living in an underground den...' }],
 };
 
 const samplePremise2 = {
   id: 2,
-  artifact: sampleArtifact,
-  desc: 'Leaving the cave is painful but reveals true forms under the sunlight.',
-  quotes: [{ page: 3, text: 'At first he will see the shadows best...' }],
-  citations: ['Republic 516a-517b'],
+  artifact: [sampleArtifact],
+  statement: 'Leaving the cave is painful but reveals true forms under the sunlight.',
+  citations: [{ page: 3, text: 'At first he will see the shadows best...' }],
 };
 
 const sampleConclusion = {
   id: 3,
-  artifact: sampleArtifact,
-  desc: 'Education is the turning of the soul toward the Form of the Good.',
-  quotes: [{ page: 4, text: 'Education is not what some people boastfully assert it to be...' }],
-  citations: ['Republic 518c'],
+  artifact: [sampleArtifact],
+  statement: 'Education is the turning of the soul toward the Form of the Good.',
+  citations: [{ page: 4, text: 'Education is not what some people boastfully assert it to be...' }],
 };
 
 const SAMPLE_ANALYSIS: GraphData = {
-  claims: [samplePremise1, samplePremise2, sampleConclusion],
+  statements: [samplePremise1, samplePremise2, sampleConclusion],
   arguments: [
     {
       id: 1,
