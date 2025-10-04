@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
 
-
 class TTSRequest(BaseModel):
     text: str
     voice_id: Optional[str] = None  # Defaults to Alice in the route

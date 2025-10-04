@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 
 interface TTSOptions {
   voiceId?: string;
@@ -9,20 +9,24 @@ interface TTSOptions {
   };
 }
 
-interface UseTTSReturn {
+export interface UseTTSReturn {
   speak: (text: string, options?: TTSOptions) => Promise<void>;
   isLoading: boolean;
+  isSpeaking: boolean;
   error: string | null;
   audioUrl: string | null;
   clearAudio: () => void;
+  stop: () => void;
 }
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export const useTTS = (): UseTTSReturn => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const clearAudio = useCallback(() => {
     if (audioUrl) {
@@ -30,6 +34,16 @@ export const useTTS = (): UseTTSReturn => {
       setAudioUrl(null);
     }
   }, [audioUrl]);
+
+  const stop = useCallback(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+      audioRef.current = null;
+    }
+    setIsSpeaking(false);
+  }, []);
 
   const speak = useCallback(async (text: string, options?: TTSOptions) => {
     if (!text.trim()) {
@@ -39,6 +53,7 @@ export const useTTS = (): UseTTSReturn => {
 
     setIsLoading(true);
     setError(null);
+    stop();
     clearAudio();
 
     try {
@@ -66,9 +81,24 @@ export const useTTS = (): UseTTSReturn => {
 
       // Auto-play the audio
       const audio = new Audio(url);
-      audio.play().catch((err) => {
-        console.error('Error playing audio:', err);
-      });
+      audioRef.current = audio;
+
+      const handleFinish = () => {
+        setIsSpeaking(false);
+      };
+
+      audio.addEventListener('ended', handleFinish, { once: true });
+      audio.addEventListener('pause', handleFinish, { once: true });
+
+      audio
+        .play()
+        .then(() => {
+          setIsSpeaking(true);
+        })
+        .catch((err) => {
+          console.error('Error playing audio:', err);
+          setIsSpeaking(false);
+        });
 
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
@@ -77,13 +107,15 @@ export const useTTS = (): UseTTSReturn => {
     } finally {
       setIsLoading(false);
     }
-  }, [clearAudio]);
+  }, [clearAudio, stop]);
 
   return {
     speak,
     isLoading,
+    isSpeaking,
     error,
     audioUrl,
     clearAudio,
+    stop,
   };
 };

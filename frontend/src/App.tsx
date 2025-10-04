@@ -12,20 +12,27 @@ import { useTTS } from './hooks/useTTS';
 const SAMPLE_ANALYSIS = defaultGraph as GraphData;
 
 export default function App() {
+  const [graphData, setGraphData] = useState<GraphData | null>(SAMPLE_ANALYSIS);
+
   return (
     <Routes>
-      <Route path="/" element={<GraphPage />} />
-      <Route path="/assistant" element={<AssistantPage />} />
+      <Route path="/" element={<GraphPage graphData={graphData} setGraphData={setGraphData} />} />
+      <Route path="/assistant" element={<AssistantPage graphData={graphData} />} />
     </Routes>
   );
 }
 
-function GraphPage() {
-  const [graphData, setGraphData] = useState<GraphData | null>(SAMPLE_ANALYSIS);
+type GraphPageProps = {
+  graphData: GraphData | null;
+  setGraphData: (graph: GraphData | null) => void;
+};
+
+function GraphPage({ graphData, setGraphData }: GraphPageProps) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [assistantPrompt, setAssistantPrompt] = useState('');
   const [deepDAGEnabled, setDeepDAGEnabled] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
   const navigate = useNavigate();
 
   const handleUpload = async (file: File) => {
@@ -34,6 +41,7 @@ function GraphPage() {
     try {
       const result = await analyzePdf(file);
       setGraphData(result);
+      setUploadedFiles((prev) => [...prev, file.name]);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Upload failed');
     } finally {
@@ -56,14 +64,23 @@ function GraphPage() {
     setAssistantPrompt('');
   };
 
+  const handleResetGraph = () => {
+    setGraphData(null);
+    setUploadedFiles([]);
+  };
+
   return (
     <>
       <main className="page">
         <h1>PhilDAG</h1>
 
-        <UploadForm onSubmit={handleUpload} loading={loading} />
+        <UploadForm onSubmit={handleUpload} loading={loading} files={uploadedFiles} />
 
         {error && <p className="error">{error}</p>}
+
+        <button className="graph-reset" type="button" onClick={handleResetGraph}>
+          Reset graph
+        </button>
 
         <GraphView graph={graphData} />
       </main>
@@ -105,13 +122,17 @@ type AssistantLocationState = {
   graph?: GraphData | null;
 };
 
-function AssistantPage() {
+type AssistantPageProps = {
+  graphData: GraphData | null;
+};
+
+function AssistantPage({ graphData }: AssistantPageProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as AssistantLocationState | null;
   const question = state?.question ?? '';
   const deepdag = state?.deepdag ?? false;
-  const contextGraph = state?.graph ?? SAMPLE_ANALYSIS;
+  const contextGraph = state?.graph ?? graphData ?? SAMPLE_ANALYSIS;
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -119,7 +140,8 @@ function AssistantPage() {
   const [conversation, setConversation] = useState<ConversationTurn[]>([]);
   const [messageDraft, setMessageDraft] = useState('');
   const lastQuestionRef = useRef<string | null>(null);
-  const { speak, isLoading: ttsLoading, error: ttsError } = useTTS();
+  const tts = useTTS();
+  const { speak: speakTTS, isLoading: ttsLoading, error: ttsError } = tts;
   const assistantSpokenCountRef = useRef<number>(0);
 
   const sendRequest = useCallback(
@@ -195,11 +217,11 @@ function AssistantPage() {
     if (assistantMessages.length > assistantSpokenCountRef.current) {
       const latest = assistantMessages[assistantMessages.length - 1];
       if (latest?.content?.trim()) {
-        void speak(latest.content);
+        void speakTTS(latest.content);
       }
       assistantSpokenCountRef.current = assistantMessages.length;
     }
-  }, [conversation, speak]);
+  }, [conversation, speakTTS]);
 
   return (
     <main className="page">
@@ -211,7 +233,7 @@ function AssistantPage() {
           <div key={`${message.role}-${index}`} className={`assistant-chat__message assistant-chat__message--${message.role}`}>
             <span>{message.content}</span>
             {message.role === 'assistant' && (
-              <TTSButton text={message.content}>
+              <TTSButton text={message.content} controller={tts}>
                 🔊 Speak
               </TTSButton>
             )}
@@ -234,7 +256,11 @@ function AssistantPage() {
         <button type="submit" disabled={loading}>
           Send
         </button>
-        <TTSButton text={lastAssistantText} disabled={ttsLoading || !lastAssistantText.trim()}>
+        <TTSButton
+          text={lastAssistantText}
+          controller={tts}
+          disabled={ttsLoading || !lastAssistantText.trim()}
+        >
           🔊 Read Last
         </TTSButton>
       </form>
